@@ -49,16 +49,11 @@ public class ViewIsantePlusIndicatorReportRequestPageController {
 						model.addAttribute("dataset", dataset);
 						model.addAttribute("columns", dataset.getMetaData().getColumns());
 						model.addAttribute("columnsvalues", dataset.iterator());
-						model.addAttribute("columnskeys", dataset.iterator().next().getColumnValuesByKey().keySet().toArray());
 						model.addAttribute("request", requestUuid);
-						model.addAttribute("i", 0);
 					}
 				}
 			}
 
-			// (old) return new ModelAndView(new RedirectView(linkUrl));
-			// (new) return "redirect:" + linkUrl;
-			// throw new IllegalStateException("Web Renderers not yet implemented");
 			return null;
 		} else {
 			String filename = renderingMode.getRenderer().getFilename(req).replace(" ", "_");
@@ -97,11 +92,6 @@ public class ViewIsantePlusIndicatorReportRequestPageController {
 					for (String key : reportData.getDataSets().keySet()) {
 						dataset = reportData.getDataSets().get(key);
 					}
-					// List<Parameter> parameter = dataset.getDefinition().getParameters();
-					// SimpleDateFormat parseFormater = new SimpleDateFormat("EEE MMM dd HH:mm:ss
-					// zzz yyyy", Locale.getDefault());
-					// SimpleDateFormat formater = new SimpleDateFormat("dd/MM/yyyy",
-					// Locale.getDefault());
 
 					if (dataset != null) {
 						model.addAttribute("reportName", dataset.getDefinition().getName());

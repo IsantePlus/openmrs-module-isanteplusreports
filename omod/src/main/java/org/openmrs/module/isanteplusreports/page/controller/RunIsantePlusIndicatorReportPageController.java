@@ -75,7 +75,7 @@ public class RunIsantePlusIndicatorReportPageController {
 		if (missingParameters.size() > 0) {
 			request.getSession().setAttribute(WebConstants.OPENMRS_ERROR_ATTR,
 					ui.message("reportingui.runReport.missingParameter"));
-			return "redirect:" + ui.pageLink("reportingui", "runReport",
+			return "redirect:" + ui.pageLink("reportingui", "runIndicatorReport",
 					SimpleObject.create("reportDefinition", reportDefinition.getUuid()));
 		}
 
@@ -97,7 +97,7 @@ public class RunIsantePlusIndicatorReportPageController {
 			model.addAttribute("columnsvalues", dataset.iterator());
 		}
 
-		return "redirect:" + ui.pageLink("reportingui", "runReport",
+		return "redirect:" + ui.pageLink("reportingui", "runIndicatorReport",
 				SimpleObject.create("reportDefinition", reportDefinition.getUuid()));
 	}
 
