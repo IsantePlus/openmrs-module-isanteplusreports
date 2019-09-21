@@ -24,7 +24,7 @@
   			
 	    	<% parameter.each { %>
 	    			<tr>
-			    		<td><b> ${ui.format(it.getName())} </b></td>
+			    		<td><b> ${ui.message(it.labelOrName)} </b></td>
 			    		<td> ${ui.format(dataset.getContext().getParameterValue(it.getName()))} </td>
 			    		
 		    		</tr>
@@ -34,25 +34,19 @@
 		<br>
   		<table>
 	    	<% columnsvalues.each { %>
-	    		<% i = 0 %>
     			<% columns.each { colName -> %>
     				<tr>
 	    				<td>
 	    					${ui.format(colName)}
 	    				</td>
 			    		<td>
-			    			<a href="${ ui.pageLink("isanteplusreports", "indicatorReportPatientList") }?savedDataSetKey=${reportName}&savedColumnKey=${columnskeys[i]}" onclick="window.open(this.href, 'windowName', 'width=1000, height=700, left=24, top=24, scrollbars, resizable'); return false;">
+			    			<a href="${ ui.pageLink("isanteplusreports", "indicatorReportPatientList") }?savedDataSetKey=${reportName}&savedColumnKey=${colName.name}" onclick="window.open(this.href, 'windowName', 'width=1000, height=700, left=24, top=24, scrollbars, resizable'); return false;">
 			    				${ui.format(it.columnValues[colName])}
 		    				</a>
 			    		</td>
-    					<% i = i + 1 %>
 	    			</tr>
 	    		<% } %>
 	    	<% } %>
     	</table>
-     <% } %> 
-     <br/>
-     <% if(i > 15) { %>
-     Total : ${ui.format(i)}
      <% } %>
-    </div>
+</div>
