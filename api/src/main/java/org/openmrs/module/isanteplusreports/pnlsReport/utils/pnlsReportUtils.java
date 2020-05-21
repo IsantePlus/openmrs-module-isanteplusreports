@@ -50,28 +50,54 @@ public class pnlsReportUtils {
 	}
 	
 	public static void addAgeAndGenderColumns(CohortIndicatorDataSetDefinition dsd, CohortIndicator CohortIndicator,
-	        String g) {
+	        String gender) {
 		
 		String genderDimension = "";
-		if (StringUtils.equals(g, "M")) {
+		if (StringUtils.equals(gender, "M")) {
 			genderDimension = "|gender=M";
-		} else if (StringUtils.equals(g, "F")) {
+		} else if (StringUtils.equals(gender, "F")) {
 			genderDimension = "|gender=F";
 		}
-		constructColumn("0-1" + g, "0-1 Years", CohortIndicator, "age=0_1" + genderDimension, dsd);
-		constructColumn("1-4" + g, "1-4 Years", CohortIndicator, "age=1_4" + genderDimension, dsd);
-		constructColumn("5-9" + g, "5-9 Years", CohortIndicator, "age=5_9" + genderDimension, dsd);
-		constructColumn("10-14" + g, "10-14 Years", CohortIndicator, "age=10_14" + genderDimension, dsd);
-		constructColumn("15-19" + g, "15-19 Years", CohortIndicator, "age=15_19" + genderDimension, dsd);
-		constructColumn("20-24" + g, "20-24 Years", CohortIndicator, "age=20_24" + genderDimension, dsd);
-		constructColumn("25-29" + g, "25-29 Years", CohortIndicator, "age=25_29" + genderDimension, dsd);
-		constructColumn("30-34" + g, "30-34 Years", CohortIndicator, "age=30_34" + genderDimension, dsd);
-		constructColumn("35-39" + g, "35-39 Years", CohortIndicator, "age=35_39" + genderDimension, dsd);
-		constructColumn("40-44" + g, "40-44 Years", CohortIndicator, "age=40_44" + genderDimension, dsd);
-		constructColumn("45-49" + g, "45-49 Years", CohortIndicator, "age=45_49" + genderDimension, dsd);
-		constructColumn("50" + g, "50+ Years", CohortIndicator, "age=50" + genderDimension, dsd);
-		constructColumn("UnKnown" + g, " unknown Years", CohortIndicator, "age=unknown" + genderDimension, dsd);
-		constructColumn("Total" + g, "Total Patients", CohortIndicator, "gender=" + g, dsd);
+		constructColumn("0-1" + gender, "0-1 Years", CohortIndicator, "age=0_1" + genderDimension, dsd);
+		constructColumn("1-4" + gender, "1-4 Years", CohortIndicator, "age=1_4" + genderDimension, dsd);
+		constructColumn("5-9" + gender, "5-9 Years", CohortIndicator, "age=5_9" + genderDimension, dsd);
+		constructColumn("10-14" + gender, "10-14 Years", CohortIndicator, "age=10_14" + genderDimension, dsd);
+		constructColumn("15-19" + gender, "15-19 Years", CohortIndicator, "age=15_19" + genderDimension, dsd);
+		constructColumn("20-24" + gender, "20-24 Years", CohortIndicator, "age=20_24" + genderDimension, dsd);
+		constructColumn("25-29" + gender, "25-29 Years", CohortIndicator, "age=25_29" + genderDimension, dsd);
+		constructColumn("30-34" + gender, "30-34 Years", CohortIndicator, "age=30_34" + genderDimension, dsd);
+		constructColumn("35-39" + gender, "35-39 Years", CohortIndicator, "age=35_39" + genderDimension, dsd);
+		constructColumn("40-44" + gender, "40-44 Years", CohortIndicator, "age=40_44" + genderDimension, dsd);
+		constructColumn("45-49" + gender, "45-49 Years", CohortIndicator, "age=45_49" + genderDimension, dsd);
+		constructColumn("50" + gender, "50+ Years", CohortIndicator, "age=50" + genderDimension, dsd);
+		constructColumn("UnKnown" + gender, " unknown Years", CohortIndicator, "age=unknown" + genderDimension, dsd);
+		constructColumn("Total" + gender, "Total Patients", CohortIndicator, "gender=" + gender, dsd);
+	}
+	
+	public static void addMultipleAgeAndGenderColumns(CohortIndicatorDataSetDefinition dsd, CohortIndicator CohortIndicator,
+	        String gender, String column) {
+		
+		String genderDimension = "";
+		if (StringUtils.equals(gender, "M")) {
+			genderDimension = "|gender=M";
+		} else if (StringUtils.equals(gender, "F")) {
+			genderDimension = "|gender=F";
+		}
+		constructColumn("0-1" + gender + column, "0-1 Years", CohortIndicator, "age=0_1" + genderDimension, dsd);
+		constructColumn("1-4" + gender + column, "1-4 Years", CohortIndicator, "age=1_4" + genderDimension, dsd);
+		constructColumn("5-9" + gender + column, "5-9 Years", CohortIndicator, "age=5_9" + genderDimension, dsd);
+		constructColumn("10-14" + gender + column, "10-14 Years", CohortIndicator, "age=10_14" + genderDimension, dsd);
+		constructColumn("15-19" + gender + column, "15-19 Years", CohortIndicator, "age=15_19" + genderDimension, dsd);
+		constructColumn("20-24" + gender + column, "20-24 Years", CohortIndicator, "age=20_24" + genderDimension, dsd);
+		constructColumn("25-29" + gender + column, "25-29 Years", CohortIndicator, "age=25_29" + genderDimension, dsd);
+		constructColumn("30-34" + gender + column, "30-34 Years", CohortIndicator, "age=30_34" + genderDimension, dsd);
+		constructColumn("35-39" + gender + column, "35-39 Years", CohortIndicator, "age=35_39" + genderDimension, dsd);
+		constructColumn("40-44" + gender + column, "40-44 Years", CohortIndicator, "age=40_44" + genderDimension, dsd);
+		constructColumn("45-49" + gender + column, "45-49 Years", CohortIndicator, "age=45_49" + genderDimension, dsd);
+		constructColumn("50" + gender + column, "50+ Years", CohortIndicator, "age=50" + genderDimension, dsd);
+		constructColumn("UnKnown" + gender + column, " unknown Years", CohortIndicator, "age=unknown" + genderDimension,
+		    dsd);
+		constructColumn("Total" + gender + column, "Total Patients", CohortIndicator, "gender=" + gender, dsd);
 	}
 	
 	public static void addTotalColumns(CohortIndicatorDataSetDefinition dsd, CohortIndicator CohortIndicator) {
@@ -90,6 +116,107 @@ public class pnlsReportUtils {
 		constructColumn("50T", "50+ Years", CohortIndicator, "age=50", dsd);
 		constructColumn("UnKnownT", " unknown Years", CohortIndicator, "age=unknown", dsd);
 		constructColumn("TotalT", "Total Patients", CohortIndicator, "", dsd);
+	}
+	
+	public static void addMultipleTotalColumns(CohortIndicatorDataSetDefinition dsd, CohortIndicator CohortIndicator,
+	        String column) {
+		
+		constructColumn("0-1T" + column, "0-1 Years", CohortIndicator, "age=0_1", dsd);
+		constructColumn("1-4T" + column, "1-4 Years", CohortIndicator, "age=1_4", dsd);
+		constructColumn("5-9T" + column, "5-9 Years", CohortIndicator, "age=5_9", dsd);
+		constructColumn("10-14T" + column, "10-14 Years", CohortIndicator, "age=10_14", dsd);
+		constructColumn("15-19T" + column, "15-19 Years", CohortIndicator, "age=15_19", dsd);
+		constructColumn("20-24T" + column, "20-24 Years", CohortIndicator, "age=20_24", dsd);
+		constructColumn("25-29T" + column, "25-29 Years", CohortIndicator, "age=25_29", dsd);
+		constructColumn("30-34T" + column, "30-34 Years", CohortIndicator, "age=30_34", dsd);
+		constructColumn("35-39T" + column, "35-39 Years", CohortIndicator, "age=35_39", dsd);
+		constructColumn("40-44T" + column, "40-44 Years", CohortIndicator, "age=40_44", dsd);
+		constructColumn("45-49T" + column, "45-49 Years", CohortIndicator, "age=45_49", dsd);
+		constructColumn("50T" + column, "50+ Years", CohortIndicator, "age=50", dsd);
+		constructColumn("UnKnownT" + column, " unknown Years", CohortIndicator, "age=unknown", dsd);
+		constructColumn("TotalT" + column, "Total Patients", CohortIndicator, "", dsd);
+	}
+	
+	public static void addAgeAndGenderAndNotEnrollOnArtReasonColumns(CohortIndicatorDataSetDefinition dsd,
+	        CohortIndicator CohortIndicator, String gender, String column, String dimension) {
+		
+		String genderDimension = "";
+		if (StringUtils.equals(gender, "M")) {
+			genderDimension = "|gender=M";
+		} else if (StringUtils.equals(gender, "F")) {
+			genderDimension = "|gender=F";
+		}
+		
+		String reasonDimension = "";
+		if (StringUtils.isNotBlank(dimension)) {
+			reasonDimension = "|enrolRsn=" + dimension;
+		} else {
+			reasonDimension = "";
+		}
+		
+		constructColumn("0-1" + gender + column, "0-1 Years", CohortIndicator, "age=0_1" + genderDimension + reasonDimension,
+		    dsd);
+		constructColumn("1-4" + gender + column, "1-4 Years", CohortIndicator, "age=1_4" + genderDimension + reasonDimension,
+		    dsd);
+		constructColumn("5-9" + gender + column, "5-9 Years", CohortIndicator, "age=5_9" + genderDimension + reasonDimension,
+		    dsd);
+		constructColumn("10-14" + gender + column, "10-14 Years", CohortIndicator,
+		    "age=10_14" + genderDimension + reasonDimension, dsd);
+		constructColumn("15-19" + gender + column, "15-19 Years", CohortIndicator,
+		    "age=15_19" + genderDimension + reasonDimension, dsd);
+		constructColumn("20-24" + gender + column, "20-24 Years", CohortIndicator,
+		    "age=20_24" + genderDimension + reasonDimension, dsd);
+		constructColumn("25-29" + gender + column, "25-29 Years", CohortIndicator,
+		    "age=25_29" + genderDimension + reasonDimension, dsd);
+		constructColumn("30-34" + gender + column, "30-34 Years", CohortIndicator,
+		    "age=30_34" + genderDimension + reasonDimension, dsd);
+		constructColumn("35-39" + gender + column, "35-39 Years", CohortIndicator,
+		    "age=35_39" + genderDimension + reasonDimension, dsd);
+		constructColumn("40-44" + gender + column, "40-44 Years", CohortIndicator,
+		    "age=40_44" + genderDimension + reasonDimension, dsd);
+		constructColumn("45-49" + gender + column, "45-49 Years", CohortIndicator,
+		    "age=45_49" + genderDimension + reasonDimension, dsd);
+		constructColumn("50" + gender + column, "50+ Years", CohortIndicator, "age=50" + genderDimension + reasonDimension,
+		    dsd);
+		constructColumn("UnKnown" + gender + column, " unknown Years", CohortIndicator,
+		    "age=unknown" + genderDimension + reasonDimension, dsd);
+		constructColumn("Total" + gender + column, "Total Patients", CohortIndicator, "gender=" + gender + reasonDimension,
+		    dsd);
+	}
+	
+	public static void addKeyPopulationColums(CohortIndicatorDataSetDefinition dsd, CohortIndicator CohortIndicator,
+	        String column) {
+		constructColumn("MSM" + column, "MSM", CohortIndicator, "keyPopn=MSM", dsd);
+		constructColumn("SP" + column, "Sex Profesional", CohortIndicator, "keyPopn=SEX", dsd);
+		constructColumn("TSG" + column, "Transgender", CohortIndicator, "keyPopn=TRANSG", dsd);
+		constructColumn("CP" + column, "Captives", CohortIndicator, "keyPopn=CAPT", dsd);
+		constructColumn("DRUG" + column, "Drug Users", CohortIndicator, "keyPopn=DRUG", dsd);
+		constructColumn("Total" + column, "Tatal", CohortIndicator, "", dsd);
+	}
+	
+	public static void addKeyPopulationSingleRowColums(CohortIndicatorDataSetDefinition dsd,
+	        CohortIndicator CohortIndicator) {
+		constructColumn("MSM", "MSM", CohortIndicator, "keyPopn=MSM", dsd);
+		constructColumn("SP", "Sex Profesional", CohortIndicator, "keyPopn=SEX", dsd);
+		constructColumn("TSG", "Transgender", CohortIndicator, "keyPopn=TRANSG", dsd);
+		constructColumn("CP", "Captives", CohortIndicator, "keyPopn=CAPT", dsd);
+		constructColumn("DRUG", "Drug Users", CohortIndicator, "keyPopn=DRUG", dsd);
+	}
+	
+	public static void addGenderAndAgeBy15Colums(CohortIndicatorDataSetDefinition dsd, CohortIndicator CohortIndicator,
+	        String gender, String column) {
+		
+		String genderDimension = "";
+		if (StringUtils.equals(gender, "M")) {
+			genderDimension = "|gender=M";
+		} else if (StringUtils.equals(gender, "F")) {
+			genderDimension = "|gender=F";
+		}
+		
+		constructColumn("<15" + gender + column, "<15 Years", CohortIndicator, "age=<15" + genderDimension, dsd);
+		constructColumn(">15" + gender + column, ">15 Years", CohortIndicator, "age=>15" + genderDimension, dsd);
+		constructColumn("UnKnown" + gender + column, "UnKnown", CohortIndicator, "age=unknown" + genderDimension, dsd);
+		constructColumn("Total" + gender + column, "Total Patients", CohortIndicator, "gender=" + gender, dsd);
 	}
 	
 	public static void constructColumn(String columnName, String ColumnDescription, CohortIndicator CohortIndicator,
