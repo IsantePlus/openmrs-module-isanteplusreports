@@ -71,6 +71,15 @@ public class RegisterAllPnlsReports {
 		lostPatientsDied();
 		lostPatientsAfterLessThan3MonthsTreatment();
 		lostPatientsAfterMoreThan3MonthsTreatment();
+		lostPatientsTransferred();
+		lostPatientsStopped();
+		deadArvPatientsByTuberclosis();
+		deadArvPatientsByOtherInfectiousDiseases();
+		deadArvPatientsByCancer();
+		deadArvPatientsByHivIllnesses();
+		deadArvPatientsByNaturalCauses();
+		deadArvPatientsByUnNaturalCauses();
+		deadArvPatientsByUnKnownCauses();
 	}
 	
 	private static void newlyEnrolledPatientsOnArt() {	
@@ -159,7 +168,69 @@ public class RegisterAllPnlsReports {
 		    PnlsReportConstants.LOST_ARV_PATIENTS_AFTER_TREATMENT_MORE_3MONTHS_UUID);		
 	}
 	
+	private static void lostPatientsTransferred() {	
+		registerPnlsReportWithAgeAndGenderColumnsAndStartAndEndDateParams(
+			PnlsReportConstants.LOST_ARV_PATIENTS_TRANSFERRED_SQL,
+		    PnlsReportConstants.LOST_ARV_PATIENTS_TRANSFERRED_MESSAGE,
+		    PnlsReportConstants.LOST_ARV_PATIENTS_TRANSFERRED_UUID);		
+	}
 	
+	private static void lostPatientsStopped() {	
+		registerPnlsReportWithAgeAndGenderColumnsAndStartAndEndDateParams(
+			PnlsReportConstants.LOST_ARV_PATIENTS_STOPPED_SQL,
+		    PnlsReportConstants.LOST_ARV_PATIENTS_STOPPED_MESSAGE,
+		    PnlsReportConstants.LOST_ARV_PATIENTS_STOPPED_UUID);		
+	}
+	
+	private static void deadArvPatientsByTuberclosis() {	
+		registerPnlsReportWithAgeAndGenderColumnsAndStartAndEndDateParams(
+			PnlsReportConstants.DEAD_ARV_PATIENTS_BY_TUBERCLOSIS_SQL,
+		    PnlsReportConstants.DEAD_ARV_PATIENTS_BY_TUBERCLOSIS_MESSAGE,
+		    PnlsReportConstants.DEAD_ARV_PATIENTS_BY_TUBERCLOSIS_UUID);		
+	}
+	
+	private static void deadArvPatientsByOtherInfectiousDiseases() {	
+		registerPnlsReportWithAgeAndGenderColumnsAndStartAndEndDateParams(
+			PnlsReportConstants.DEAD_ARV_PATIENTS_BY_OTHER_INFECTIOUS_DISEASES_SQL,
+		    PnlsReportConstants.DEAD_ARV_PATIENTS_BY_OTHER_INFECTIOUS_DISEASES_MESSAGE,
+		    PnlsReportConstants.DEAD_ARV_PATIENTS_BY_OTHER_INFECTIOUS_DISEASES_UUID);		
+	}
+	
+	private static void deadArvPatientsByCancer() {	
+		registerPnlsReportWithAgeAndGenderColumnsAndStartAndEndDateParams(
+			PnlsReportConstants.DEAD_ARV_PATIENTS_BY_CANCER_SQL,
+		    PnlsReportConstants.DEAD_ARV_PATIENTS_BY_CANCER_MESSAGE ,
+		    PnlsReportConstants.DEAD_ARV_PATIENTS_BY_CANCER_UUID);		
+	}
+	
+	private static void deadArvPatientsByHivIllnesses() {	
+		registerPnlsReportWithAgeAndGenderColumnsAndStartAndEndDateParams(
+			PnlsReportConstants.DEAD_ARV_PATIENTS_BY_HIV_ILLNESSES_SQL,
+		    PnlsReportConstants.DEAD_ARV_PATIENTS_BY_HIV_ILLNESSES_MESSAGE ,
+		    PnlsReportConstants.DEAD_ARV_PATIENTS_BY_HIV_ILLNESSES_UUID);		
+	}
+	
+	private static void deadArvPatientsByNaturalCauses() {	
+		registerPnlsReportWithAgeAndGenderColumnsAndStartAndEndDateParams(
+			PnlsReportConstants.DEAD_ARV_PATIENTS_BY_NATURAL_CAUSES_SQL,
+		    PnlsReportConstants.DEAD_ARV_PATIENTS_BY_NATURAL_CAUSES_MESSAGE ,
+		    PnlsReportConstants.DEAD_ARV_PATIENTS_BY_NATURAL_CAUSES_UUID);		
+	}
+	
+	private static void deadArvPatientsByUnNaturalCauses() {	
+		registerPnlsReportWithAgeAndGenderColumnsAndStartAndEndDateParams(
+			PnlsReportConstants.DEAD_ARV_PATIENTS_BY_UNNATURAL_CAUSES_SQL,
+		    PnlsReportConstants.DEAD_ARV_PATIENTS_BY_UNNATURAL_CAUSES_MESSAGE ,
+		    PnlsReportConstants.DEAD_ARV_PATIENTS_BY_UNNATURAL_CAUSES_UUID);		
+	}
+	
+	private static void deadArvPatientsByUnKnownCauses() {	
+		registerPnlsReportWithAgeAndGenderColumnsAndStartAndEndDateParams(
+			PnlsReportConstants.DEAD_ARV_PATIENTS_BY_UNKNOWN_CAUSES_SQL,
+		    PnlsReportConstants.DEAD_ARV_PATIENTS_BY_UNKNOWN_CAUSES_MESSAGE ,
+		    PnlsReportConstants.DEAD_ARV_PATIENTS_BY_UNKNOWN_CAUSES_UUID);		
+	}
+		
 	private static void newlyEnrolledBreastFeedingOnArt() {
 		registerPnlsSingleColumnReportWithStartAndEndDateParams(
 			PnlsReportConstants.NEW_BREAST_FEEDING_WOMEN_ENROLED_ON_ART_SQL,

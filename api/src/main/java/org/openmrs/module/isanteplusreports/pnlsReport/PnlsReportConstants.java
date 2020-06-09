@@ -89,6 +89,24 @@ public class PnlsReportConstants {
 	
 	public final static String LOST_ARV_PATIENTS_AFTER_TREATMENT_MORE_3MONTHS_SQL = "lostArvPatienstForMoreThan3monthsTreatment.sql";
 	
+	public final static String LOST_ARV_PATIENTS_TRANSFERRED_SQL = "lostArvPatientsTransferred.sql";
+	
+	public final static String LOST_ARV_PATIENTS_STOPPED_SQL = "lostArvPatientsStopped.sql";
+	
+	public final static String DEAD_ARV_PATIENTS_BY_TUBERCLOSIS_SQL = "deadArvPatientsByTuberclosis.sql";
+	
+	public final static String DEAD_ARV_PATIENTS_BY_OTHER_INFECTIOUS_DISEASES_SQL = "deadArvPatientsByOtherInfectiousDiseases.sql";
+	
+	public final static String DEAD_ARV_PATIENTS_BY_CANCER_SQL = "deadArvPatientsByCancer.sql";
+	
+	public final static String DEAD_ARV_PATIENTS_BY_HIV_ILLNESSES_SQL = "deadArvPatientsByHivIllnensses.sql";
+	
+	public final static String DEAD_ARV_PATIENTS_BY_NATURAL_CAUSES_SQL = "deadArvPatientsByNaturalCauses.sql";
+	
+	public final static String DEAD_ARV_PATIENTS_BY_UNNATURAL_CAUSES_SQL = "deadArvPatientsByUnNaturalCauses.sql";
+	
+	public final static String DEAD_ARV_PATIENTS_BY_UNKNOWN_CAUSES_SQL = "deadArvPatientsByUnKnownCauses.sql";
+	
 	
 	//total
 	public final static String TOTAL_HIV_PATIENTS_UNDER_PREVENTION_CTX_SQL = "TotalPatientsUnderPreventionCtx.sql";
@@ -194,6 +212,25 @@ public class PnlsReportConstants {
 	
 	public final static String LOST_ARV_PATIENTS_AFTER_TREATMENT_MORE_3MONTHS_UUID = "d601cbad-c907-47ca-9ee0-bad90df3a1kk";
 	
+	public final static String LOST_ARV_PATIENTS_TRANSFERRED_UUID = "00acc3de-79f5-40ea-a3e3-231f8352192b";
+	
+	public final static String LOST_ARV_PATIENTS_STOPPED_UUID = "d41b0838-750d-4076-a7c2-22ac5dcc33b4";
+	
+	public final static String DEAD_ARV_PATIENTS_BY_TUBERCLOSIS_UUID = "02522bc0-1bd8-49fe-90a2-981091822685";
+	
+	public final static String DEAD_ARV_PATIENTS_BY_OTHER_INFECTIOUS_DISEASES_UUID = "a2e6b222-3b5f-4be6-93e8-6976874a129a";
+	
+	public final static String DEAD_ARV_PATIENTS_BY_CANCER_UUID = "0b09b2ac-2fbb-448f-8060-05cc8e9fd8ad";
+	
+	public final static String DEAD_ARV_PATIENTS_BY_HIV_ILLNESSES_UUID = "a17da75d-5494-44c0-be3b-85114bf6e30e";
+	
+	public final static String DEAD_ARV_PATIENTS_BY_NATURAL_CAUSES_UUID = "24e2fc9a-d1af-4bd7-b1ae-152b75700298";
+	
+	public final static String DEAD_ARV_PATIENTS_BY_UNNATURAL_CAUSES_UUID = "8380dcfe-55a5-4cfd-a873-6d34c5890997";
+	
+	public final static String DEAD_ARV_PATIENTS_BY_UNKNOWN_CAUSES_UUID = "2631533d-386f-4d85-958f-1beb824c8b6c";
+	
+	
 	//total indicators
 	public final static String TOTAL_HIV_PATIENTS_UNDER_PREVENTION_CTX_UUID = "d2db4b7c-a0cf-11eaxxb37-0242ac16htkk";
 	
@@ -272,6 +309,25 @@ public class PnlsReportConstants {
 	public final static String LOST_ARV_PATIENTS_AFTER_TREATMENT_LESS_3MONTHS_MESSAGE = "isanteplusreports.lostToFolow.lessThan3monthsTreatment";
 	
 	public final static String LOST_ARV_PATIENTS_AFTER_TREATMENT_MORE_3MONTHS_MESSAGE = "isanteplusreports.lostToFolow.moreThan3monthsTreatment";
+	
+	public final static String LOST_ARV_PATIENTS_TRANSFERRED_MESSAGE = "isanteplusreports.lostToFolow.transferred";
+	
+	public final static String LOST_ARV_PATIENTS_STOPPED_MESSAGE = "isanteplusreports.lostToFolow.stopped";
+	
+	public final static String DEAD_ARV_PATIENTS_BY_TUBERCLOSIS_MESSAGE = "isanteplusreports.dead.tuberclosis";
+	
+	public final static String DEAD_ARV_PATIENTS_BY_OTHER_INFECTIOUS_DISEASES_MESSAGE = "isanteplusreports.dead.otherInfectiousDiseases";
+	
+	public final static String DEAD_ARV_PATIENTS_BY_CANCER_MESSAGE = "isanteplusreports.dead.cancer";
+	
+	public final static String DEAD_ARV_PATIENTS_BY_HIV_ILLNESSES_MESSAGE = "isanteplusreports.dead.hivIllnesses";
+	
+	public final static String DEAD_ARV_PATIENTS_BY_NATURAL_CAUSES_MESSAGE = "isanteplusreports.dead.naturalCauses";
+	
+	public final static String DEAD_ARV_PATIENTS_BY_UNNATURAL_CAUSES_MESSAGE = "isanteplusreports.dead.unNaturalCauses";
+	
+	public final static String DEAD_ARV_PATIENTS_BY_UNKNOWN_CAUSES_MESSAGE = "isanteplusreports.dead.unKnownCauses";
+	
 	
 	//total indicators
 	public final static String TOTAL_HIV_PATIENTS_UNDER_PREVENTION_CTX_MESSAGE = "isanteplusreports.patientsUnderPreventionCtx.total";

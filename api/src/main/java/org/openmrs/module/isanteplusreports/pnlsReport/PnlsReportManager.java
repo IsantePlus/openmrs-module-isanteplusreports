@@ -57,7 +57,16 @@ public class PnlsReportManager {
 			                                         PnlsReportConstants.TOTAL_ARV_PATIENTS_LOST_TO_FOLLOW_UUID,
 			                                         PnlsReportConstants.LOST_ARV_PATIENTS_DIED_UUID,
 			                                         PnlsReportConstants.LOST_ARV_PATIENTS_AFTER_TREATMENT_LESS_3MONTHS_UUID,
-			                                         PnlsReportConstants.LOST_ARV_PATIENTS_AFTER_TREATMENT_MORE_3MONTHS_UUID
+			                                         PnlsReportConstants.LOST_ARV_PATIENTS_AFTER_TREATMENT_MORE_3MONTHS_UUID,
+			                                         PnlsReportConstants.LOST_ARV_PATIENTS_TRANSFERRED_UUID,
+			                                         PnlsReportConstants.LOST_ARV_PATIENTS_STOPPED_UUID,
+			                                         PnlsReportConstants.DEAD_ARV_PATIENTS_BY_TUBERCLOSIS_UUID,
+			                                         PnlsReportConstants.DEAD_ARV_PATIENTS_BY_OTHER_INFECTIOUS_DISEASES_UUID,
+			                                         PnlsReportConstants.DEAD_ARV_PATIENTS_BY_CANCER_UUID,
+			                                         PnlsReportConstants.DEAD_ARV_PATIENTS_BY_HIV_ILLNESSES_UUID,
+			                                         PnlsReportConstants.DEAD_ARV_PATIENTS_BY_NATURAL_CAUSES_UUID,
+			                                         PnlsReportConstants.DEAD_ARV_PATIENTS_BY_UNNATURAL_CAUSES_UUID,
+			                                         PnlsReportConstants.DEAD_ARV_PATIENTS_BY_UNKNOWN_CAUSES_UUID
 	                                                };
 	
 	private Map<String, PnlsIndicatorOption> options = new HashMap<>();
