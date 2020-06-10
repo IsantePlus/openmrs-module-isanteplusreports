@@ -80,6 +80,29 @@ public class RegisterAllPnlsReports {
 		deadArvPatientsByNaturalCauses();
 		deadArvPatientsByUnNaturalCauses();
 		deadArvPatientsByUnKnownCauses();
+		lostArvPatientsResumedTreatment();
+		lostArvPatientsResumedTreatmentBykeyPopulations();
+		activeArvPatientsWithViralLoadResult();
+		pregnantWomenOnArvWithViralLoadTest();
+		breastFeedingWomenOnArvWithViralLoadTest();
+		activeArvPatientsWithViralLoadBykeyPopulations();
+		activeArvPatientsWithViralLoadResultLessThan1000Copies();
+		pregnantWomenOnArvWithViralLoadResultsLessThan100Copies();
+		breastFeedingWomenOnArvWithViralLoadResultsLessThan1000Copies();
+		activeArvPatientsWithViralLoadLess100CopiesBykeyPopulations();
+		activeArvPatientsWithViralLoadResultTargeted();
+		pregnantWomenOnArvWithViralLoadTargeted();
+		breastFeedingWomenOnArvWithViralLoadTargeted();
+		activeArvPatientsWithViralLoadBykeyPopulationsTargeted();
+		activeArvPatientsWithViralLoadResultTargetedLess1000Copies();
+		pregnantWomenOnArvWithViralLoadTargetedLessThan1000Copies();
+		breastFeedingWomenOnArvWithViralLoadTargetedLesstHan1000Copies();
+		activeArvPatientsWithViralLoadLessThan1000CopiesBykeyPopulationsTargeted();
+		activeArvPatientsFor12Months();
+		activeArvPatientsFor12MonthsInSight();
+		activeArvPatientsFor12MonthsTransferred();
+		activeArvPatientsFor12MonthsAlive();
+		 womenOnArvScreenedCervicalCancer();
 	}
 	
 	private static void newlyEnrolledPatientsOnArt() {	
@@ -230,6 +253,70 @@ public class RegisterAllPnlsReports {
 		    PnlsReportConstants.DEAD_ARV_PATIENTS_BY_UNKNOWN_CAUSES_MESSAGE ,
 		    PnlsReportConstants.DEAD_ARV_PATIENTS_BY_UNKNOWN_CAUSES_UUID);		
 	}
+	
+	private static void lostArvPatientsResumedTreatment() {	
+		registerPnlsReportWithAgeAndGenderColumnsAndStartAndEndDateParams(
+			PnlsReportConstants.LOST_ARV_PATIENTS_RESUMED_TREATMENT_SQL,
+		    PnlsReportConstants.LOST_ARV_PATIENTS_RESUMED_TREATMENT_MESSAGE ,
+		    PnlsReportConstants.LOST_ARV_PATIENTS_RESUMED_TREATMENT_UUID);		
+	}
+	
+	private static void activeArvPatientsWithViralLoadResult() {	
+		registerPnlsReportWithAgeAndGenderColumnsAndStartAndEndDateParams(
+			PnlsReportConstants.ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_SQL,
+		    PnlsReportConstants.ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_MESSAGE ,
+		    PnlsReportConstants.ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_UUID);		
+	}
+	
+	private static void activeArvPatientsWithViralLoadResultLessThan1000Copies() {	
+		registerPnlsReportWithAgeAndGenderColumnsAndStartAndEndDateParams(
+			PnlsReportConstants.ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_LESS_THAN_1000_COPIES_SQL,
+		    PnlsReportConstants.ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_LESS_THAN_1000_COPIES_MESSAGE ,
+		    PnlsReportConstants.ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_LESS_THAN_1000_COPIES_UUID);		
+	}
+	
+	private static void activeArvPatientsWithViralLoadResultTargeted() {	
+		registerPnlsReportWithAgeAndGenderColumnsAndStartAndEndDateParams(
+			PnlsReportConstants.ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_TARGETED_SQL,
+		    PnlsReportConstants.ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_TARGETED_MESSAGE  ,
+		    PnlsReportConstants.ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_TARGETED_UUID);		
+	}
+	
+	private static void activeArvPatientsWithViralLoadResultTargetedLess1000Copies() {	
+		registerPnlsReportWithAgeAndGenderColumnsAndStartAndEndDateParams(
+			PnlsReportConstants.ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_TARGETED_LESS_THAN_1000_COPIES_SQL,
+		    PnlsReportConstants.ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_TARGETED_LESS_THAN_1000_COPIES_MESSAGE ,
+		    PnlsReportConstants.ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_TARGETED_LESS_THAN_1000_COPIES_UUID);		
+	}
+	
+	private static void activeArvPatientsFor12Months() {	
+		registerPnlsReportWithAgeAndGenderColumnsAndStartAndEndDateParams(
+			PnlsReportConstants.PATIENTS_ON_ARVS_FOR_12_MONTHS_SQL,
+		    PnlsReportConstants.PATIENTS_ON_ARVS_FOR_12_MONTHS_MESSAGE ,
+		    PnlsReportConstants.PATIENTS_ON_ARVS_FOR_12_MONTHS_UUID);		
+	}
+	
+	private static void activeArvPatientsFor12MonthsInSight() {	
+		registerPnlsReportWithAgeAndGenderColumnsAndStartAndEndDateParams(
+			PnlsReportConstants.PATIENTS_ON_ARVS_FOR_12_MONTHS_IN_SIGHT_SQL,
+		    PnlsReportConstants.PATIENTS_ON_ARVS_FOR_12_MONTHS_IN_SIGHT_MESSAGE ,
+		    PnlsReportConstants.PATIENTS_ON_ARVS_FOR_12_MONTHS_IN_SIGHT_UUID);		
+	}
+	
+	private static void activeArvPatientsFor12MonthsTransferred() {	
+		registerPnlsReportWithAgeAndGenderColumnsAndStartAndEndDateParams(
+			PnlsReportConstants.PATIENTS_ON_ARVS_FOR_12_MONTHS_TRANSFERRED_SQL,
+		    PnlsReportConstants.PATIENTS_ON_ARVS_FOR_12_MONTHS_TRANSFERRED_MESSAGE,
+		    PnlsReportConstants.PATIENTS_ON_ARVS_FOR_12_MONTHS_TRANSFERRED_UUID);		
+	}
+	
+
+	private static void activeArvPatientsFor12MonthsAlive() {	
+		registerPnlsReportWithAgeAndGenderColumnsAndStartAndEndDateParams(
+			PnlsReportConstants.PATIENTS_ON_ARVS_FOR_12_MONTHS_ALIVE_SQL,
+		    PnlsReportConstants.PATIENTS_ON_ARVS_FOR_12_MONTHS_ALIVE_MESSAGE,
+		    PnlsReportConstants.PATIENTS_ON_ARVS_FOR_12_MONTHS_ALIVE_UUID);		
+	}
 		
 	private static void newlyEnrolledBreastFeedingOnArt() {
 		registerPnlsSingleColumnReportWithStartAndEndDateParams(
@@ -336,6 +423,79 @@ public class RegisterAllPnlsReports {
 			);
 	}
 	
+	private static void pregnantWomenOnArvWithViralLoadTest() {
+		registerPnlsSingleColumnReportWithStartAndEndDateParams(
+			PnlsReportConstants.ACTIVE_PREGNANT_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_SQL,
+			PnlsReportConstants.ACTIVE_PREGNANT_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_MESSAGE,
+			PnlsReportConstants.ACTIVE_PREGNANT_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_UUID
+			);
+	}
+	
+	private static void breastFeedingWomenOnArvWithViralLoadTest() {
+		registerPnlsSingleColumnReportWithStartAndEndDateParams(
+			PnlsReportConstants.ACTIVE_BREAST_FEEDING_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_SQL,
+			PnlsReportConstants.ACTIVE_BREAST_FEEDING_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_MESSAGE,
+			PnlsReportConstants.ACTIVE_BREAST_FEEDING_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_UUID
+			);
+	}
+	
+	private static void pregnantWomenOnArvWithViralLoadResultsLessThan100Copies() {
+		registerPnlsSingleColumnReportWithStartAndEndDateParams(
+			PnlsReportConstants.ACTIVE_PREGNANT_WOMEN_WITH_VIRAL_LOAD_RESULT_LESS_THAN_1000_COPIES_SQL,
+			PnlsReportConstants.ACTIVE_PREGNANT_WOMEN_WITH_VIRAL_LOAD_RESULT_LESS_THAN_1000_COPIES_MESSAGE,
+			PnlsReportConstants.ACTIVE_PREGNANT_WOMEN_WITH_VIRAL_LOAD_RESULT_LESS_THAN_1000_COPIES_UUID
+			);
+	}
+	
+	private static void breastFeedingWomenOnArvWithViralLoadResultsLessThan1000Copies() {
+		registerPnlsSingleColumnReportWithStartAndEndDateParams(
+			PnlsReportConstants.ACTIVE_BREAST_FEEDING_WOMEN_WITH_VIRAL_LOAD_RESULT_LESS_THAN_1000_COPIES_SQL,
+			PnlsReportConstants.ACTIVE_BREAST_FEEDING_WOMEN_WITH_VIRAL_LOAD_RESULT_LESS_THAN_1000_COPIES_MESSAGE,
+			PnlsReportConstants.ACTIVE_BREAST_FEEDING_WOMEN_WITH_VIRAL_LOAD_RESULT_LESS_THAN_1000_COPIES_UUID
+			);
+	}
+	
+	private static void pregnantWomenOnArvWithViralLoadTargeted() {
+		registerPnlsSingleColumnReportWithStartAndEndDateParams(
+			PnlsReportConstants.ACTIVE_PREGNANT_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_TARGETED_SQL,
+			PnlsReportConstants.ACTIVE_PREGNANT_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_TARGETED_MESSAGE,
+			PnlsReportConstants.ACTIVE_PREGNANT_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_TARGETED_UUID
+			);
+	}
+	
+	private static void breastFeedingWomenOnArvWithViralLoadTargeted() {
+		registerPnlsSingleColumnReportWithStartAndEndDateParams(
+			PnlsReportConstants.ACTIVE_BREAST_FEEDING_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_TARGETED_SQL,
+			PnlsReportConstants.ACTIVE_BREAST_FEEDING_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_TARGETED_MESSAGE,
+			PnlsReportConstants.ACTIVE_BREAST_FEEDING_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_TARGETED_UUID
+			);
+	}
+	
+	private static void pregnantWomenOnArvWithViralLoadTargetedLessThan1000Copies() {
+		registerPnlsSingleColumnReportWithStartAndEndDateParams(
+			PnlsReportConstants.ACTIVE_PREGNANT_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_TARGETED_LESS_THAN_1000_COPIES_SQL,
+			PnlsReportConstants.ACTIVE_PREGNANT_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_TARGETED_LESS_THAN_1000_COPIES_MESSAGE,
+			PnlsReportConstants.ACTIVE_PREGNANT_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_TARGETED_LESS_THAN_1000_COPIES_UUID
+			);
+	}
+	
+	private static void breastFeedingWomenOnArvWithViralLoadTargetedLesstHan1000Copies() {
+		registerPnlsSingleColumnReportWithStartAndEndDateParams(
+			PnlsReportConstants.ACTIVE_BREAST_FEEDING_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_TARGETED_LESS_THAN_1000_COPIES_SQL,
+			PnlsReportConstants.ACTIVE_BREAST_FEEDING_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_TARGETED_LESS_THAN_1000_COPIES_MESSAGE ,
+			PnlsReportConstants.ACTIVE_BREAST_FEEDING_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_TARGETED_LESS_THAN_1000_COPIES_UUID
+			);
+	}
+	
+	
+	private static void womenOnArvScreenedCervicalCancer() {
+		registerPnlsSingleColumnReportWithStartAndEndDateParams(
+			PnlsReportConstants.WOMEN_ON_ARVS_SCREENED_FOR_CERVICAL_CANCER_SQL ,
+			PnlsReportConstants.WOMEN_ON_ARVS_SCREENED_FOR_CERVICAL_CANCER_MESSAGE ,
+			PnlsReportConstants.WOMEN_ON_ARVS_SCREENED_FOR_CERVICAL_CANCER_UUID
+			);
+	}
+	
 	private static void notEnrolledOnArtByReason() {
 		patientsNotEnrolledOnArtByReason(
 			PnlsReportConstants.NOT_ENROLED_ON_ART_COHORT_INDICATOR_SQL,
@@ -359,6 +519,51 @@ public class RegisterAllPnlsReports {
 			PnlsReportConstants.ACTIVE_HIV_PATIENTS_SQL,
 			PnlsReportConstants.ACTIVE_HIV_PATIENTS_BY_KEY_POPN_MESSAGE,
 			PnlsReportConstants.ACTIVE_HIV_PATIENTS_BY_KEY_POPN_UUID
+		);
+		
+	}
+	
+	private static void lostArvPatientsResumedTreatmentBykeyPopulations() {
+		registerKeyPopulationReportWithSingleRowAndStartAndEndDateParams(
+			PnlsReportConstants.LOST_ARV_PATIENTS_RESUMED_TREATMENT_SQL,
+			PnlsReportConstants.LOST_ARV_PATIENTS_RESUMED_TREATMENT_KEY_POPULATION_MESSAGE,
+			PnlsReportConstants.LOST_ARV_PATIENTS_RESUMED_TREATMENT_KEY_POPULATION_UUID
+		);
+		
+	}
+	
+	private static void activeArvPatientsWithViralLoadBykeyPopulations() {
+		registerKeyPopulationReportWithSingleRowAndStartAndEndDateParams(
+			PnlsReportConstants.ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_SQL,
+			PnlsReportConstants.ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_KEY_POPULATION_MESSAGE,
+			PnlsReportConstants.ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_KEY_POPULATION_UUID
+		);
+		
+	}
+	
+	private static void activeArvPatientsWithViralLoadLess100CopiesBykeyPopulations() {
+		registerKeyPopulationReportWithSingleRowAndStartAndEndDateParams(
+			PnlsReportConstants.ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_LESS_THAN_1000_COPIES_SQL,
+			PnlsReportConstants.ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_LESS_THAN_1000_COPIES_BY_KEY_POPULATION_MESSAGE,
+			PnlsReportConstants.ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_LESS_THAN_1000_COPIES_BY_KEY_POPULATION_UUID
+		);
+		
+	}
+	
+	private static void activeArvPatientsWithViralLoadBykeyPopulationsTargeted() {
+		registerKeyPopulationReportWithSingleRowAndStartAndEndDateParams(
+			PnlsReportConstants.ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_TARGETED_SQL,
+			PnlsReportConstants.ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_TARGETED_BY_KEY_POPULATION_MESSAGE,
+			PnlsReportConstants.ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_TARGETED_BY_KEY_POPULATION_UUID
+		);
+		
+	}
+	
+	private static void activeArvPatientsWithViralLoadLessThan1000CopiesBykeyPopulationsTargeted() {
+		registerKeyPopulationReportWithSingleRowAndStartAndEndDateParams(
+			PnlsReportConstants.ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_TARGETED_LESS_THAN_1000_COPIES_SQL ,
+			PnlsReportConstants.ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_TARGETED_LESS_THAN_1000_COPIES_KEY_POPULATION_MESSAGE ,
+			PnlsReportConstants.ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_TARGETED_LESS_THAN_1000_COPIES_KEY_POPULATION_UUID
 		);
 		
 	}

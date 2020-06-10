@@ -107,6 +107,42 @@ public class PnlsReportConstants {
 	
 	public final static String DEAD_ARV_PATIENTS_BY_UNKNOWN_CAUSES_SQL = "deadArvPatientsByUnKnownCauses.sql";
 	
+	public final static String LOST_ARV_PATIENTS_RESUMED_TREATMENT_SQL = "lostPatientsResumedTreatment.sql";
+	
+	public final static String ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_SQL = "activeArvPatientWithViralLoadResult.sql";
+	
+	public final static String ACTIVE_PREGNANT_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_SQL = "activePregnantWomenOnArtWithViralLoadResult.sql";
+	
+	public final static String ACTIVE_BREAST_FEEDING_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_SQL = "activeBreastFeedingWomenOnArtWithViralLoadResult.sql";
+	
+	public final static String ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_LESS_THAN_1000_COPIES_SQL = "activeArvPatientWithViralLoadResultLess1000Copies.sql";
+	
+	public final static String ACTIVE_PREGNANT_WOMEN_WITH_VIRAL_LOAD_RESULT_LESS_THAN_1000_COPIES_SQL = "activePregnantWomenWithViralLoadResultLess1000Copies.sql";
+	
+	public final static String ACTIVE_BREAST_FEEDING_WOMEN_WITH_VIRAL_LOAD_RESULT_LESS_THAN_1000_COPIES_SQL = "activeBreastFeedingWomenWithViralLoadResultLess1000Copies.sql";
+	
+    public final static String ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_TARGETED_SQL = "activeArvPatientWithViralLoadResultTargeted.sql";
+	
+	public final static String ACTIVE_PREGNANT_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_TARGETED_SQL = "activePregnantWomenOnArtWithViralLoadResultTargeted.sql";
+	
+	public final static String ACTIVE_BREAST_FEEDING_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_TARGETED_SQL = "activeBreastFeedingWomenOnArtWithViralLoadResultTargeted.sql";
+	
+    public final static String ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_TARGETED_LESS_THAN_1000_COPIES_SQL = "activeArvPatientWithViralLoadResultTargetedLessThan1000Copies.sql";
+	
+	public final static String ACTIVE_PREGNANT_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_TARGETED_LESS_THAN_1000_COPIES_SQL = "activePregnantWomenOnArtWithViralLoadResultTargetedLessThan1000Copies.sql";
+	
+	public final static String ACTIVE_BREAST_FEEDING_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_TARGETED_LESS_THAN_1000_COPIES_SQL = "activeBreastFeedingWomenOnArtWithViralLoadResultTargetedLessThan1000Copies.sql";
+	
+	public final static String PATIENTS_ON_ARVS_FOR_12_MONTHS_SQL ="patientsOnArvsFor12Months.sql";
+	
+	public final static String PATIENTS_ON_ARVS_FOR_12_MONTHS_IN_SIGHT_SQL ="patientsOnArvsFor12MonthsInSight.sql";
+	
+	public final static String PATIENTS_ON_ARVS_FOR_12_MONTHS_TRANSFERRED_SQL ="patientsOnArvsFor12MonthsTransferred.sql";
+	
+	public final static String PATIENTS_ON_ARVS_FOR_12_MONTHS_ALIVE_SQL ="patientsOnArvsFor12MonthsAlive.sql";
+	
+	public final static String WOMEN_ON_ARVS_SCREENED_FOR_CERVICAL_CANCER_SQL ="womenOnArvsScreenedForCervicalCancer.sql";
+	
 	
 	//total
 	public final static String TOTAL_HIV_PATIENTS_UNDER_PREVENTION_CTX_SQL = "TotalPatientsUnderPreventionCtx.sql";
@@ -230,7 +266,53 @@ public class PnlsReportConstants {
 	
 	public final static String DEAD_ARV_PATIENTS_BY_UNKNOWN_CAUSES_UUID = "2631533d-386f-4d85-958f-1beb824c8b6c";
 	
+	public final static String LOST_ARV_PATIENTS_RESUMED_TREATMENT_UUID = "1f14a65c-b466-44ac-a1a8-230ef15b6db9";
 	
+	public final static String LOST_ARV_PATIENTS_RESUMED_TREATMENT_KEY_POPULATION_UUID = "9e1676a2-e753-4f5c-a5fb-cb8f6f0912a4";
+	
+	public final static String ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_UUID = "6ccebba0-8e85-433b-8fcb-0f5217641787";
+	
+    public final static String ACTIVE_PREGNANT_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_UUID = "7f210d8d-1f77-464e-adb3-6ceea6e5aeba";
+	
+	public final static String ACTIVE_BREAST_FEEDING_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_UUID = "3d4e8c9f-55d4-4e07-a139-53efaafb4e5c";
+	
+	public final static String ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_KEY_POPULATION_UUID = "888b56a0-fcdb-4112-828f-ecf83a54ade4";
+	
+    public final static String ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_LESS_THAN_1000_COPIES_UUID = "668547f2-6839-4028-a2a6-d3e8e18748bb";
+	
+	public final static String ACTIVE_PREGNANT_WOMEN_WITH_VIRAL_LOAD_RESULT_LESS_THAN_1000_COPIES_UUID = "ef2f4a22-f589-4876-8801-e8aa7e5d4deb";
+	
+	public final static String ACTIVE_BREAST_FEEDING_WOMEN_WITH_VIRAL_LOAD_RESULT_LESS_THAN_1000_COPIES_UUID = "f1f96238-ef64-4081-b435-fd63bc00692c";
+	
+    public final static String ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_LESS_THAN_1000_COPIES_BY_KEY_POPULATION_UUID = "e6a5f749-01b0-4e54-86e4-da8a775dc792";
+	
+    public final static String ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_TARGETED_UUID = "29ca709b-fa61-48d4-997f-bc0e18a50f41";
+	
+   	public final static String ACTIVE_PREGNANT_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_TARGETED_UUID = "68c73e21-69d3-4477-9cd0-1e512c7b3c79";
+   	
+   	public final static String ACTIVE_BREAST_FEEDING_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_TARGETED_UUID = "72780272-591a-4287-be7d-1c7a2adb7ebc";
+   	
+   	public final static String ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_TARGETED_BY_KEY_POPULATION_UUID = "7443eb07-7fad-4ed7-a02b-e76c50b23247";
+   	
+    public final static String ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_TARGETED_LESS_THAN_1000_COPIES_UUID = "e419b4e6-194d-4484-8cf2-fe699f584b72";
+	
+   	public final static String ACTIVE_PREGNANT_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_TARGETED_LESS_THAN_1000_COPIES_UUID = "3e2e172a-0547-4373-84d3-b933c535b3b1";
+   	
+   	public final static String ACTIVE_BREAST_FEEDING_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_TARGETED_LESS_THAN_1000_COPIES_UUID = "2da16fc7-ed2e-453d-a6ed-35674b24dc16";
+   	
+    public final static String ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_TARGETED_LESS_THAN_1000_COPIES_KEY_POPULATION_UUID = "3b7ed00f-7620-464c-89f3-f21428948bc0";
+    
+    public final static String PATIENTS_ON_ARVS_FOR_12_MONTHS_UUID ="206f3edb-5603-4e36-b34a-ee9cf58406ba";
+	
+	public final static String PATIENTS_ON_ARVS_FOR_12_MONTHS_IN_SIGHT_UUID ="84137c56-5c5a-46a7-b7fe-383880c9ece3";
+	
+	public final static String PATIENTS_ON_ARVS_FOR_12_MONTHS_TRANSFERRED_UUID ="4749f768-0d3d-4fc6-9acb-f838a0935fdb";
+	
+	public final static String PATIENTS_ON_ARVS_FOR_12_MONTHS_ALIVE_UUID ="99d0d341-496a-4305-ab30-83e31310cf74";
+	
+	public final static String WOMEN_ON_ARVS_SCREENED_FOR_CERVICAL_CANCER_UUID ="c481b716-d2ab-4017-86a5-daed4158f817";
+	
+   	   	
 	//total indicators
 	public final static String TOTAL_HIV_PATIENTS_UNDER_PREVENTION_CTX_UUID = "d2db4b7c-a0cf-11eaxxb37-0242ac16htkk";
 	
@@ -327,6 +409,54 @@ public class PnlsReportConstants {
 	public final static String DEAD_ARV_PATIENTS_BY_UNNATURAL_CAUSES_MESSAGE = "isanteplusreports.dead.unNaturalCauses";
 	
 	public final static String DEAD_ARV_PATIENTS_BY_UNKNOWN_CAUSES_MESSAGE = "isanteplusreports.dead.unKnownCauses";
+	
+	public final static String LOST_ARV_PATIENTS_RESUMED_TREATMENT_MESSAGE = "isanteplusreports.lost.resumedTreatment";
+	
+	public final static String LOST_ARV_PATIENTS_RESUMED_TREATMENT_KEY_POPULATION_MESSAGE = "isanteplusreports.lost.resumedTreatment.keyPopn";
+	
+	public final static String ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_MESSAGE = "isanteplusreports.activePatients.viralLoadResult";
+	
+	public final static String ACTIVE_PREGNANT_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_MESSAGE = "isanteplusreports.activePatients.viralLoadResult.pregnant";
+		
+	public final static String ACTIVE_BREAST_FEEDING_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_MESSAGE = "isanteplusreports.activePatients.viralLoadResult.breastFeeding";
+		
+	public final static String ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_KEY_POPULATION_MESSAGE = "isanteplusreports.activePatients.viralLoadResult.keyPopn";
+	
+	public final static String ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_LESS_THAN_1000_COPIES_MESSAGE = "isanteplusreports.activePatients.viralLoadResultLessThan1000";
+		
+	public final static String ACTIVE_PREGNANT_WOMEN_WITH_VIRAL_LOAD_RESULT_LESS_THAN_1000_COPIES_MESSAGE = "isanteplusreports.activePatients.viralLoadResultLessThan1000.pregnantWomen";
+		
+	public final static String ACTIVE_BREAST_FEEDING_WOMEN_WITH_VIRAL_LOAD_RESULT_LESS_THAN_1000_COPIES_MESSAGE = "isanteplusreports.activePatients.viralLoadResultLessThan1000.breatFeedingWomen";
+		
+	public final static String ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_LESS_THAN_1000_COPIES_BY_KEY_POPULATION_MESSAGE = "isanteplusreports.activePatients.viralLoadResultLessThan1000.keyPopulation";
+	
+	public final static String ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_TARGETED_MESSAGE = "isanteplusreports.activePatients.viralLoadResult.targeted";
+		
+	public final static String ACTIVE_PREGNANT_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_TARGETED_MESSAGE = "isanteplusreports.activePatients.viralLoadResult.pregnant.targerted";
+	   	
+	public final static String ACTIVE_BREAST_FEEDING_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_TARGETED_MESSAGE = "isanteplusreports.activePatients.viralLoadResult.breastFeeding.targerted";
+	   	
+	public final static String ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_TARGETED_BY_KEY_POPULATION_MESSAGE = "isanteplusreports.activePatients.viralLoadResult.keyPopn.targerted";
+	
+	public final static String ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_TARGETED_LESS_THAN_1000_COPIES_MESSAGE = "isanteplusreports.activePatients.viralLoadResult.targeted.lessThan1000Copies";
+		
+	public final static String ACTIVE_PREGNANT_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_TARGETED_LESS_THAN_1000_COPIES_MESSAGE = "isanteplusreports.activePatients.viralLoadResult.pregnant.targerted.lessThan100Copies";
+	   	
+	public final static String ACTIVE_BREAST_FEEDING_WOMEN_ON_ART_WITH_VIRAL_LOAD_RESULT_TARGETED_LESS_THAN_1000_COPIES_MESSAGE = "isanteplusreports.activePatients.viralLoadResult.breastFeeding.targerted.lessThan100Copies";
+	   	
+	public final static String ACTIVE_ARV_PATIENTS_WITH_VIRAL_LOAD_RESULT_TARGETED_LESS_THAN_1000_COPIES_KEY_POPULATION_MESSAGE = "isanteplusreports.activePatients.viralLoadResult.keyPopn.targerted.lessThan1000Copies";
+	
+	public final static String PATIENTS_ON_ARVS_FOR_12_MONTHS_MESSAGE ="isanteplusreports.activePatientsFor12Months";
+		
+	public final static String PATIENTS_ON_ARVS_FOR_12_MONTHS_IN_SIGHT_MESSAGE ="isanteplusreports.activePatientsInsight";
+		
+	public final static String PATIENTS_ON_ARVS_FOR_12_MONTHS_TRANSFERRED_MESSAGE ="isanteplusreports.activePatientsTransferred";
+		
+	public final static String PATIENTS_ON_ARVS_FOR_12_MONTHS_ALIVE_MESSAGE ="isanteplusreports.activePatientsAlive";
+			   
+	public final static String WOMEN_ON_ARVS_SCREENED_FOR_CERVICAL_CANCER_MESSAGE = "isanteplusreports.womenOnArvScreenedCervicalCancer"; 			
+			
+		
 	
 	
 	//total indicators
