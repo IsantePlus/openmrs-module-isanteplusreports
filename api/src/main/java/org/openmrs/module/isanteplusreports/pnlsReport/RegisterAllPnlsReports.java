@@ -351,7 +351,7 @@ public class RegisterAllPnlsReports {
 	
 	private static void totalPatientsUnderPreventionCtx() {
 		registerPnlsSingleColumnReportWithStartAndEndDateParams(
-			PnlsReportConstants.TOTAL_HIV_PATIENTS_UNDER_PREVENTION_CTX_SQL,
+			PnlsReportConstants.TOTAL_HIV_PATIENTS_UNDER_PREVENTION_CTX_SQL_4,
 			PnlsReportConstants.TOTAL_HIV_PATIENTS_UNDER_PREVENTION_CTX_MESSAGE,
 			PnlsReportConstants.TOTAL_HIV_PATIENTS_UNDER_PREVENTION_CTX_UUID
 			);
@@ -359,7 +359,7 @@ public class RegisterAllPnlsReports {
 	
 	private static void totalPatientsUnderPreventionTbTreatment() {
 		registerPnlsSingleColumnReportWithStartAndEndDateParams(
-			PnlsReportConstants.TOTAL_HIV_PATIENTS_UNDER_PREVENTION_TB_TREATMENT_SQL,
+			PnlsReportConstants.TOTAL_HIV_PATIENTS_UNDER_PREVENTION_TB_TREATMENT_SQL_5,
 			PnlsReportConstants.TOTAL_HIV_PATIENTS_UNDER_PREVENTION_TB_TREATMENT_MESSAGE,
 			PnlsReportConstants.TOTAL_HIV_PATIENTS_UNDER_PREVENTION_TB_TREATMENT_UUID
 			);
@@ -367,7 +367,7 @@ public class RegisterAllPnlsReports {
 	
 	private static void totalPatientsUnderPreventionTbTreatmentForSixMonths() {
 		registerPnlsSingleColumnReportWithStartAndEndDateParams(
-			PnlsReportConstants.TOTAL_HIV_PATIENTS_UNDER_PREVENTION_TB_TREATMENT_FOR_SIX_MONTHS_SQL,
+			PnlsReportConstants.TOTAL_HIV_PATIENTS_UNDER_PREVENTION_TB_TREATMENT_FOR_SIX_MONTHS_SQL_6,
 			PnlsReportConstants.TOTAL_HIV_PATIENTS_UNDER_PREVENTION_TB_TREATMENT_FOR_SIX_MONTHS_MESSAGE,
 			PnlsReportConstants.TOTAL_HIV_PATIENTS_UNDER_PREVENTION_TB_TREATMENT_FOR_SIX_MONTHS_UUID
 			);
@@ -585,8 +585,8 @@ public class RegisterAllPnlsReports {
 	
 	private static void patientsUnderCtx() {
 	  registerPatientsUnderCtxWithStartAndEndDateParams(
-			PnlsReportConstants.NEWLY_POWERED_CTX_COHORT_INDICATOR_SQL,
-			PnlsReportConstants.ACTIVE_CTX_COHORT_INDICATOR_SQL,
+			PnlsReportConstants.NEWLY_POWERED_CTX_COHORT_INDICATOR_SQL_4_1,
+			PnlsReportConstants.ACTIVE_CTX_COHORT_INDICATOR_SQL_4_2,
 			PnlsReportConstants.HIV_PATIENTS_UNDER_PREVENTION_CTX_MESSAGE,
 			PnlsReportConstants.HIV_PATIENTS_UNDER_PREVENTION_CTX_UUID
 		);		
@@ -594,8 +594,8 @@ public class RegisterAllPnlsReports {
 	
 	private static void patientsEnrolledOnArtUnderTbTreatMent() {
 		registerArvPatientsByAge15TreatmentWithStartAndEndDateParams(
-				PnlsReportConstants.COHORT_NEW_PATIENTS_ON_ART_STARTED_WITH_TB_TREATMENT_SQL,
-				PnlsReportConstants.COHORT_PATIENTS_ALREADY_ON_ART_STARTED_WITH_TB_TREATMENT_SQL,
+				PnlsReportConstants.COHORT_NEW_PATIENTS_ON_ART_STARTED_WITH_TB_TREATMENT_SQL_5_1,
+				PnlsReportConstants.COHORT_PATIENTS_ALREADY_ON_ART_STARTED_WITH_TB_TREATMENT_SQL_5_2,
 				PnlsReportConstants.HIV_PATIENTS_UNDER_PREVENTION_TB_TREATMENT_MESSAGE,
 				PnlsReportConstants.HIV_PATIENTS_UNDER_PREVENTION_TB_TREATMENT_UUID
 			);		
@@ -603,8 +603,8 @@ public class RegisterAllPnlsReports {
 	
 	private static void patientsEnrolledOnArtUnderTbTreatMentFor6months() {
 		registerArvPatientsByAge15TreatmentWithStartAndEndDateParams(
-				PnlsReportConstants.COHORT_NEW_PATIENTS_ON_ART_STARTED_WITH_TB_TREATMENT_SQL,
-				PnlsReportConstants.COHORT_PATIENTS_ALREADY_ON_ART_STARTED_WITH_TB_TREATMENT_SQL,
+				PnlsReportConstants.COHORT_NEW_PATIENTS_ON_ART_STARTED_WITH_TB_TREATMENT_FOR_SIX_MONTHS_SQL_6_1,
+				PnlsReportConstants.COHORT_PATIENTS_ALREADY_ON_ART_STARTED_WITH_TB_TREATMENT_FOR_SIX_MONTHS_SQL_6_2,
 				PnlsReportConstants.HIV_PATIENTS_UNDER_PREVENTION_TB_TREATMENT_6MONTHS_MESSAGE,
 				PnlsReportConstants.HIV_PATIENTS_UNDER_PREVENTION_TB_TREATMENT_6MONTHS_UUID
 			);		

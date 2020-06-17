@@ -18,22 +18,14 @@ public class PnlsReportConstants {
 	
 	public final static String NOT_ENROLED_ON_ART_COHORT_INDICATOR_SQL = "notEnrolledOnArtCorhortIndicator.sql";
 	
-	//Dimension corhots by Reason of Non Enrollment NOTE THAT THE SQL FILES BELOW ARE STILL DUMMY
-	public final static String COHORT_NON_ENROLLMENT_REASON_OTHER_SQL = "notEnrolledReasonOther.sql";
+	//cohorts
+	public final static String COHORT_NEW_PATIENTS_ON_ART_STARTED_WITH_TB_TREATMENT_SQL_5_1 = "NewlyEnrolledOnArtStartedTbTreatment.sql";
 	
-	public final static String COHORT_NON_ENROLLMENT_REASON_DIED_SQL = "notEnrolledReasonDied.sql";
+	public final static String COHORT_PATIENTS_ALREADY_ON_ART_STARTED_WITH_TB_TREATMENT_SQL_5_2 = "AlreadyOnArtStartedTbTreatment.sql";
 	
-	public final static String COHORT_NON_ENROLLMENT_REASON_VOLUNTARY_SQL = "notEnrolledReasonVoluntary.sql";
+    public final static String COHORT_NEW_PATIENTS_ON_ART_STARTED_WITH_TB_TREATMENT_FOR_SIX_MONTHS_SQL_6_1 = "NewlyEnrolledOnArtStartedTbTreatmentForSixMonths.sql";
 	
-	public final static String COHORT_NON_ENROLLMENT_REASON_DENIAL_SQL = "notEnrolledReasonDenial.sql";
-	
-	public final static String COHORT_NON_ENROLLMENT_REASON_MEDICAL_SQL = "notEnrolledReasonMedical.sql";
-	
-	public final static String COHORT_NON_ENROLLMENT_REASON_REFERRED_SQL = "notEnrolledReasonReferred.sql";
-	
-	public final static String COHORT_NEW_PATIENTS_ON_ART_STARTED_WITH_TB_TREATMENT_SQL = "NewlyEnrolledOnArtStartedTbTreatment.sql";
-	
-	public final static String COHORT_PATIENTS_ALREADY_ON_ART_STARTED_WITH_TB_TREATMENT_SQL = "AlreadyOnArtStartedTbTreatment.sql";
+	public final static String COHORT_PATIENTS_ALREADY_ON_ART_STARTED_WITH_TB_TREATMENT_FOR_SIX_MONTHS_SQL_6_2 = "AlreadyOnArtStartedTbTreatmentForSixMonths.sql";
 	
 	public final static String COHORT_NEW_PATIENTS_ON_ART_COMPLETED_TB_TREATMENT_SQL = "NewlyEnrolledOnArtCompletedTbTreatment.sql";
 	
@@ -188,12 +180,18 @@ public class PnlsReportConstants {
 	
 	public final static String PATIENTS_USING_FAMILY_PLANNING_CCV_SQL = "patientsUsingFamilyPlanningCcv.sql";
 	
+	//corhot indicators for Patients on CTX
+	
+	public final static String NEWLY_POWERED_CTX_COHORT_INDICATOR_SQL_4_1 = "newlyPoweredCtxCorhotIndicator.sql";
+	
+	public final static String ACTIVE_CTX_COHORT_INDICATOR_SQL_4_2 = "activeCtxCorhotIndicator.sql";
+	
 	//totals
-	public final static String TOTAL_HIV_PATIENTS_UNDER_PREVENTION_CTX_SQL = "TotalPatientsUnderPreventionCtx.sql";
+	public final static String TOTAL_HIV_PATIENTS_UNDER_PREVENTION_CTX_SQL_4 = "TotalPatientsUnderPreventionCtx.sql";
 	
-	public final static String TOTAL_HIV_PATIENTS_UNDER_PREVENTION_TB_TREATMENT_SQL = "TotalPatientsUnderTbTreament.sql";
+	public final static String TOTAL_HIV_PATIENTS_UNDER_PREVENTION_TB_TREATMENT_SQL_5 = "TotalPatientsUnderTbTreament.sql";
 	
-	public final static String TOTAL_HIV_PATIENTS_UNDER_PREVENTION_TB_TREATMENT_FOR_SIX_MONTHS_SQL = "TotalPatientsUnderTbTreatmentForSixMonths.sql";
+	public final static String TOTAL_HIV_PATIENTS_UNDER_PREVENTION_TB_TREATMENT_FOR_SIX_MONTHS_SQL_6 = "TotalPatientsUnderTbTreatmentForSixMonths.sql";
 	
 	public final static String TOTAL_HIV_PATIENTS_COMPLETED_PREVENTION_TB_TREATMENT_SQL = "TotalPatientsCompletedTbTreatment.sql";
 	
@@ -233,11 +231,18 @@ public class PnlsReportConstants {
 	
 	public final static String WOMEN_WITH_SUSPECTED_CERVICAL_CANCER_COHORT_SQL = "womenWithSuspectedCervicalCancer.sql";
 	
-	//corhot indicators for Patients on CTX
+	//Dimension corhots by Reason of Non Enrollment NOTE THAT THE SQL FILES BELOW ARE STILL DUMMY
+	public final static String COHORT_NON_ENROLLMENT_REASON_OTHER_SQL = "notEnrolledReasonOther.sql";
 	
-	public final static String NEWLY_POWERED_CTX_COHORT_INDICATOR_SQL = "newlyPoweredCtxCorhotIndicator.sql";
+	public final static String COHORT_NON_ENROLLMENT_REASON_DIED_SQL = "notEnrolledReasonDied.sql";
 	
-	public final static String ACTIVE_CTX_COHORT_INDICATOR_SQL = "activeCtxCorhotIndicator.sql";
+	public final static String COHORT_NON_ENROLLMENT_REASON_VOLUNTARY_SQL = "notEnrolledReasonVoluntary.sql";
+	
+	public final static String COHORT_NON_ENROLLMENT_REASON_DENIAL_SQL = "notEnrolledReasonDenial.sql";
+	
+	public final static String COHORT_NON_ENROLLMENT_REASON_MEDICAL_SQL = "notEnrolledReasonMedical.sql";
+	
+	public final static String COHORT_NON_ENROLLMENT_REASON_REFERRED_SQL = "notEnrolledReasonReferred.sql";
 	
 	//UUIDS	
 	public static final String NEWLY_ENROLLED_PATIENTS_ON_ART_UUID = "3e1698a5-f77f-45e3-a2b9-b0f7d2ede9qx";
