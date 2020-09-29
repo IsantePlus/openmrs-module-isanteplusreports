@@ -220,6 +220,9 @@ public class IsantePlusReportsUtil {
 		ReportDesign rDes = reportDesign("Excel", repDefinition, ExcelTemplateRenderer.class);
 		rs.saveReportDesign(rDes);
 	}
+	
+	public static void registerIndicatorReportsWithStartAndEndDateParams(String name,
+			String description, String uuid, DataSetDefinition dataSetDefinition) {
 
     public static void registerIndicatorReportsWithStartAndEndDateParams(String name, String description, String uuid,
             DataSetDefinition dataSetDefinition) {
@@ -427,6 +430,18 @@ public class IsantePlusReportsUtil {
 		ReportDesign rDes = reportDesign("Excel", repDefinition, ExcelTemplateRenderer.class);
 		rs.saveReportDesign(rDes);
 	}
+	
+    public static SqlCohortDefinition sqlCohortDefinition(String sql,String name, String description) {
+        SqlCohortDefinition cd = new SqlCohortDefinition();
+        cd.setName(name);
+        cd.setDescription(description);
+        cd.addParameter(startDate);
+        cd.addParameter(endDate);
+        cd.addParameter(location);
+        cd.setQuery(sql);
+        
+        return cd;
+    }
 
     public static SqlCohortDefinition sqlCohortDefinition(String sql, String name, String description) {
         SqlCohortDefinition cd = new SqlCohortDefinition();
