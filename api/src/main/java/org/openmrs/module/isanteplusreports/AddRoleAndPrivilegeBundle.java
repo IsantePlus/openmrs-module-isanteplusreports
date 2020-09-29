@@ -1,5 +1,6 @@
 package org.openmrs.module.isanteplusreports;
 
+
 import org.openmrs.Privilege;
 import org.openmrs.Role;
 import org.openmrs.api.UserService;
@@ -11,7 +12,11 @@ import static org.openmrs.module.metadatadeploy.bundle.CoreConstructors.idSet;
 import static org.openmrs.module.metadatadeploy.bundle.CoreConstructors.privilege;
 import static org.openmrs.module.metadatadeploy.bundle.CoreConstructors.role;
 
-@Component("reportsRolePrivilegeMetadata")
+import org.openmrs.api.context.Context;
+import org.openmrs.module.metadatadeploy.bundle.AbstractMetadataBundle;
+import org.springframework.context.annotation.ComponentScan;
+
+@ComponentScan({ "org.openmrs.module.isanteplusreports" })
 public class AddRoleAndPrivilegeBundle extends AbstractMetadataBundle {
 
 	 public static class _Privilege {

@@ -220,7 +220,26 @@ public class IsantePlusReportsUtil {
 		ReportDesign rDes = reportDesign("Excel", repDefinition, ExcelTemplateRenderer.class);
 		rs.saveReportDesign(rDes);
 	}
+	
+	public static void registerIndicatorReportsWithStartAndEndDateParams(String name,
+			String description, String uuid, DataSetDefinition dataSetDefinition) {
 
+		Map<String, Object> mappings = new HashMap<String, Object>();
+		mappings.put("startDate", "${startDate}");
+		mappings.put("endDate", "${endDate}");
+
+		DataSetDefinition dsd = dataSetDefinition;
+		dsd.addParameter(startDate);
+		dsd.addParameter(endDate);
+		Context.getService(DataSetDefinitionService.class).saveDefinition(dsd);
+
+		ReportDefinition repDefinition = reportDefinition(name, description, uuid);
+		repDefinition.addParameter(startDate);
+		repDefinition.addParameter(endDate);
+		repDefinition.addDataSetDefinition(dsd, mappings);
+		Context.getService(SerializedDefinitionService.class).saveDefinition(repDefinition);
+	}
+	
     public static void registerIndicatorReportsWithStartAndEndDateParams(String name, String description, String uuid,
             DataSetDefinition dataSetDefinition) {
         
@@ -427,6 +446,18 @@ public class IsantePlusReportsUtil {
 		ReportDesign rDes = reportDesign("Excel", repDefinition, ExcelTemplateRenderer.class);
 		rs.saveReportDesign(rDes);
 	}
+	
+    public static SqlCohortDefinition sqlCohortDefinition(String sql,String name, String description) {
+        SqlCohortDefinition cd = new SqlCohortDefinition();
+        cd.setName(name);
+        cd.setDescription(description);
+        cd.addParameter(startDate);
+        cd.addParameter(endDate);
+        cd.addParameter(location);
+        cd.setQuery(sql);
+        
+        return cd;
+    }
 
     public static SqlCohortDefinition sqlCohortDefinition(String sql, String name, String description) {
         SqlCohortDefinition cd = new SqlCohortDefinition();

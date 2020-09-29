@@ -10,6 +10,10 @@ public class IsantePlusReportsConstants {
 
     public static final String LAB_TEST_CONCEPT_ID_FILE = "labTestConceptId.txt";
 
+    public static final String TB_INDICATORS_RESOURCE_PATH = REPORTS_SQL_PATH + "tbIndicatorReport/";
+    
+    public static final String NUTRITION_INDICATORS_RESOURCE_PATH = REPORTS_SQL_PATH + "nutritionIndicatorReport/";
+    
 	public static final String MALARIA_INDICATORS_RESOURCE_PATH = REPORTS_SQL_PATH + "malariaIndicatorReport/";
 
 	public static final String OBGYN_INDICATORS_RESOURCE_PATH = REPORTS_SQL_PATH + "obGynSurveillanceReport/";
