@@ -105,6 +105,11 @@ public class RegisterAllOtherReports extends SessionContext {
 		//MalariaIndicatorReport.registerReport();
 		ObGynIndicatorReport.registerReport();
 		listPatientWithActivityAfterDiscByPeriod();
+		listPatientVaccinatedForCovid19();
+		listPatientDiagnoseForCovid19();
+		listPatientSuspectedCovid19();
+		listPatientConfirmCovid19();
+		hivPatientsWithoutPositiveHivTest();
 	}
 
 	private static void cleanTables() {
@@ -522,5 +527,29 @@ public class RegisterAllOtherReports extends SessionContext {
 				MessageUtil.translate("isanteplusreports.activity_after_discontinuation_by_period"), IsantePlusReportsProperties.ACTIVITY_AFTER_DISC_BY_PERIOD);
 	}
 	
+	private static void listPatientVaccinatedForCovid19() {
+		IsantePlusReportsUtil.registerReportsWithStartAndEndDateParams("patients_vaccinated_for_covid_19.sql","Liste des patients vaccinés pour le COVID-19",
+				"Liste des patients vaccinés pour le COVID-19", IsantePlusReportsProperties.PATIENTS_VACCINATED_FOR_COVID19);
+	}
 	
+	private static void listPatientDiagnoseForCovid19() {
+		IsantePlusReportsUtil.registerReportsWithStartAndEndDateParams("patients_diagnose_for_covid19.sql","Liste des patients diagnostiqués pour le COVID-19",
+				"Liste des patients diagnostiqués pour le COVID-19", IsantePlusReportsProperties.PATIENTS_DIAGNOSE_FOR_COVID19);
+	}
+	
+	private static void listPatientConfirmCovid19() {
+		IsantePlusReportsUtil.registerReportsWithStartAndEndDateParams("patients_confirm_covid19.sql","Liste des patients confirmés COVID-19",
+				"Liste des patients confirmés COVID-19", IsantePlusReportsProperties.PATIENTS_CONFIRM_COVID19);
+	}
+	
+	private static void listPatientSuspectedCovid19() {
+		IsantePlusReportsUtil.registerReportsWithStartAndEndDateParams("patients_suspected_covid19.sql","Liste des patients suspectés pour le COVID-19",
+				"Liste des patients suspectés pour le COVID-19", IsantePlusReportsProperties.PATIENTS_SUSPECTED_COVID19);
+	}
+	
+	private static void hivPatientsWithoutPositiveHivTest(){
+		IsantePlusReportsUtil.registerReportsWithoutParams("list_hiv_patients_without_hiv_test.sql","Liste des patients VIH sans test VIH positif",
+				"Liste des patients VIH sans test VIH positif", IsantePlusReportsProperties.PATIENTS_HIV_WITHOUT_POSITIVE_HIV_TEST);
+	
+	}
 }

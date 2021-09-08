@@ -181,4 +181,15 @@ public class IsantePlusReportsProperties{
 	
 	public static final String ACTIVITY_AFTER_DISC_BY_PERIOD = "7414a044-ace9-4140-88f2-5b79d869b5c9";
 
+	public static final String PATIENTS_VACCINATED_FOR_COVID19 = "de5c0d89-4d01-4f1a-99dd-20b3dd778bc";
+
+	public static final String PATIENTS_DIAGNOSE_FOR_COVID19 = "c6381c6e-b9a4-49d3-84bd-210a0bc6b0dd";
+	
+	public static final String WEEKLYMONITORINGREPORT_UUID = "1c558cf7-d44c-49f2-bf9e-a43be418c990";
+	
+	public static final String PATIENTS_CONFIRM_COVID19 = "358f6c1f-6751-4ed0-8567-95a3ac227f39";
+	
+	public static final String PATIENTS_SUSPECTED_COVID19 = "27f98dae-6c6d-4424-87d2-bd41305253f4";
+	
+	public static final String PATIENTS_HIV_WITHOUT_POSITIVE_HIV_TEST = "3d931155-97ce-4c83-8652-37735bf48e45";
 }

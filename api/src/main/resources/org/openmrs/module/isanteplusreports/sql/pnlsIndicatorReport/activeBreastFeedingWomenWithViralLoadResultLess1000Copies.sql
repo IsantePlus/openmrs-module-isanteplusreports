@@ -16,5 +16,7 @@ FROM isanteplus.patient_status_arv ps ,isanteplus.patient_laboratory pl ,isantep
 	 AND pat.breast_feeding = 1
     AND ps.date_started_status BETWEEN :startDate AND :endDate 
 	 AND pl.test_done =1 
-	 AND TIMESTAMPDIFF(MONTH, pl.date_test_done ,:endDate) >= 12
-	AND pat.viral_load_targeted IS NULL ;
+	 AND TIMESTAMPDIFF(MONTH, pl.date_test_done ,:endDate) >= 12 
+	AND pl.viral_load_target_or_routine = 1
+	AND ((pl.test_id = 856 AND pl.test_result < 1000)
+	 		OR (pl.test_id = 1305 AND pl.test_result = 1306));

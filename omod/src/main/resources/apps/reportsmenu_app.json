@@ -736,7 +736,89 @@
               "url": "isanteplusreports/pnlsReport.page",
               "order": 200,
               "requiredPrivilege": "App: reportingui.reports"
+            },
+            {
+                "id": "isanteplusreports.patient_diagnose_for_covid19",
+                "extensionPointId": "org.openmrs.module.reportingui.reports.overview",
+                "type": "link",
+                "label": "isanteplusreports.patient_diagnose_for_covid19",
+                "url": "reportingui/runReport.page?reportDefinition=c6381c6e-b9a4-49d3-84bd-210a0bc6b0dd",
+                "order": 201,
+                "requiredPrivilege": "App: reportingui.reports"
+            },
+            {
+                "id": "isanteplusreports.patient_vaccinated_covid19",
+                "extensionPointId": "org.openmrs.module.reportingui.reports.overview",
+                "type": "link",
+                "label": "isanteplusreports.patient_vaccinated_covid19",
+                "url": "reportingui/runReport.page?reportDefinition=de5c0d89-4d01-4f1a-99dd-20b3dd778bc",
+                "order": 202,
+                "requiredPrivilege": "App: reportingui.reports"
+            },
+            {
+              "id": "isanteplusreports.alertPrecoce_report",
+              "extensionPointId": "org.openmrs.module.isanteplusreports.reports.alertprecoce",
+              "type": "link",
+              "label": "isanteplusreports.alertprecoce.report.label",
+              "url": "isanteplusreports/alertPrecoceReport.page",
+              "order": 203,
+              "requiredPrivilege": "App: reportingui.reports"
+            },
+            {
+		        "id": "isanteplusreports.weeklymonitoringreport.indicator.label",
+		        "extensionPointId": "org.openmrs.module.isanteplusreports.reports.dashboard",
+		        "type": "link",
+		        "label": "isanteplusreports.weeklymonitoringreport.indicator.label",
+		        "url": "isanteplusreports/weeklyMonitoringReport.page",
+		        "order": 204,
+		        "requiredPrivilege": "App: reportingui.reports"
+		    },
+            {
+              "id": "isanteplusreports.artdistribution.report.label",
+              "extensionPointId": "org.openmrs.module.isanteplusreports.reports.dashboard",
+              "type": "link",
+              "label": "isanteplusreports.artdistribution.report.label",
+              "url": "isanteplusreports/artDistributionReport.page",
+              "order": 205,
+              "requiredPrivilege": "App: reportingui.reports"
+            },
+            {
+                "id": "isanteplusreports.patient_confirm_covid19",
+                "extensionPointId": "org.openmrs.module.reportingui.reports.overview",
+                "type": "link",
+                "label": "isanteplusreports.patient_confirm_covid19",
+                "url": "reportingui/runReport.page?reportDefinition=358f6c1f-6751-4ed0-8567-95a3ac227f39",
+                "order": 206,
+                "requiredPrivilege": "App: reportingui.reports"
+            },
+            {
+                "id": "isanteplusreports.patient_suspected_covid19",
+                "extensionPointId": "org.openmrs.module.reportingui.reports.overview",
+                "type": "link",
+                "label": "isanteplusreports.patient_suspected_covid19",
+                "url": "reportingui/runReport.page?reportDefinition=27f98dae-6c6d-4424-87d2-bd41305253f4",
+                "order": 207,
+                "requiredPrivilege": "App: reportingui.reports"
+            },
+            {
+		        "id": "isanteplusreports.isanteplusreports.hiv_patients_without_hiv_test",
+		        "extensionPointId": "org.openmrs.module.reportingui.reports.dataquality",
+		        "type": "link",
+		        "label": "isanteplusreports.hiv_patients_without_hiv_test",
+		        "url": "reportingui/runReport.page?reportDefinition=3d931155-97ce-4c83-8652-37735bf48e45",
+		        "order": 208,
+		        "requiredPrivilege": "App: reportingui.reports"
+		    },
+            {
+              "id": "isanteplusreports.psychosocial.indicator.label",
+              "extensionPointId": "org.openmrs.module.isanteplusreports.reports.psychosocial",
+              "type": "link",
+              "label": "isanteplusreports.psychosocial.indicator.label",
+              "url": "isanteplusreports/psychoSocialIndicatorReport.page",
+              "order": 209,
+              "requiredPrivilege": "App: reportingui.reports"
             }
+            
 
         ],
         "requiredPrivilege": "App: reportingui.reports"
