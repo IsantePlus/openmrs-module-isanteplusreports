@@ -9,4 +9,4 @@ FROM isanteplus.patient_status_arv ps ,isanteplus.patient_laboratory pl ,isantep
     AND ps.date_started_status BETWEEN :startDate AND :endDate 
 	 AND pl.test_done =1 
 	 AND TIMESTAMPDIFF(MONTH, pl.date_test_done ,:endDate) >= 12
-	 AND pat.viral_load_targeted =1 ;
+	 AND pl.viral_load_target_or_routine = 2 ;

@@ -12,9 +12,12 @@ public class IsantePlusReportsConstants {
 
 	public static final String MALARIA_INDICATORS_RESOURCE_PATH = REPORTS_SQL_PATH + "malariaIndicatorReport/";
 
-	public static final String SINGLE_INDICATORS_RESOURCE_PATH = REPORTS_SQL_PATH + "singleIndicatorReports/";;
+	public static final String SINGLE_INDICATORS_RESOURCE_PATH = REPORTS_SQL_PATH + "singleIndicatorReports/";
+	
 	public static final String OBGYN_INDICATORS_RESOURCE_PATH = REPORTS_SQL_PATH + "obGynSurveillanceReport/";
 	
 	public static final String HEALTHQUAL_REPORT_RESOURCE_PATH = REPORTS_SQL_PATH + "healthQualReports/";
+	
+	public static final String ALERTPRECOCE_REPORT_RESOURCE_PATH = REPORTS_SQL_PATH + "alertePrecoceReports/";
 	
 }

@@ -17,6 +17,7 @@ AND p.patient_id NOT IN (SELECT enc.patient_id FROM
             						openmrs.encounter enc, openmrs.encounter_type enct
             						WHERE enc.encounter_type = enct.encounter_type_id
             						AND enct.uuid = '9d0113c6-f23a-4461-8428-7e9a7344f2ba')
+AND p.patient_id NOT IN (SELECT ex.patient_id FROM isanteplus.exposed_infants ex)            					
 GROUP BY p.patient_id
 
 UNION
@@ -39,4 +40,5 @@ AND p.patient_id NOT IN (SELECT enc.patient_id FROM
            openmrs.encounter enc, openmrs.encounter_type enct
            WHERE enc.encounter_type = enct.encounter_type_id
            AND enct.uuid = '9d0113c6-f23a-4461-8428-7e9a7344f2ba')
+AND p.patient_id NOT IN (SELECT ex.patient_id FROM isanteplus.exposed_infants ex) 
 GROUP BY p.patient_id;

@@ -171,6 +171,7 @@ public class IsantePlusReportsServiceImpl extends BaseOpenmrsService implements 
 		if (endDate != null) {
 			sqlQuery.append(" AND ifnull(DATE(pdis.dispensation_date),DATE(pdis.visit_date)) <= '" + endDate + "'");
 		}
+		
 		//SQLQuery query = sessionFactory.getHibernateSessionFactory().getCurrentSession().createSQLQuery(sqlQuery.toString());
 		//SQLQuery query = sessionFactory.getCurrentSession().createSQLQuery(sqlQuery.toString());
 		//SQLQuery query = sessionFactory.getCurrentSession().createSQLQuery(sqlQuery.toString());
@@ -383,6 +384,125 @@ public class IsantePlusReportsServiceImpl extends BaseOpenmrsService implements 
 		SQLQuery query2 = sessionFactory.getCurrentSession().createSQLQuery(sqlQuery2.toString());
 		query2.executeUpdate();
 		
+	}
+	
+	@Override
+	public DataSet alertReport() {
+		EvaluationContext context = new EvaluationContext();
+		SqlDataSetDefinition dataSetDefinition = new SqlDataSetDefinition();
+		StringBuilder sqlQuery = new StringBuilder(
+		        "select distinct"
+		                + " al.id, al.libelle as Alert, count(a.id_alert) as Total"
+		                + " FROM isanteplus.alert a, isanteplus.alert_lookup al"
+		                + " WHERE a.id_alert = al.id"
+		                + " GROUP BY al.id");
+		SQLQuery query = sessionFactory.getCurrentSession().createSQLQuery(sqlQuery.toString());
+		//query.setInteger("primaryIdentifierType", primaryIdentifierType.getId());
+		List<Object[]> list = query.list();
+		SimpleDataSet dataSet = new SimpleDataSet(dataSetDefinition, context);
+		for (Object[] o : list) {
+			DataSetRow row = new DataSetRow();
+			row.addColumnValue(new DataSetColumn("id_alert", "id_alert", String.class), o[0]);
+			row.addColumnValue(new DataSetColumn("Alert", "Alert", String.class), o[1]);
+			row.addColumnValue(new DataSetColumn("Total", "Total", String.class), o[2]);
+			dataSet.addRow(row);
+		}
+		return dataSet;
+	}
+	
+	@Override
+	public DataSet alertReportPatientList(Integer id) {
+		EvaluationContext context = new EvaluationContext();
+		SqlDataSetDefinition dataSetDefinition = new SqlDataSetDefinition();
+		StringBuilder sqlQuery = new StringBuilder(
+		        "select distinct"
+		                + " distinct p.st_id as st_id, p.patient_id, p.national_id as national_id, p.given_name as Prénom, p.family_name as Nom, TIMESTAMPDIFF(YEAR,p.birthdate,now()) as Age, p.gender as Sexe"
+		                + " FROM isanteplus.patient p, isanteplus.alert a"
+		                + " WHERE p.patient_id = a.patient_id"
+		                + " AND a.id_alert = '" + id + "'");
+		SQLQuery query = sessionFactory.getCurrentSession().createSQLQuery(sqlQuery.toString());
+		//query.setInteger("primaryIdentifierType", primaryIdentifierType.getId());
+		List<Object[]> list = query.list();
+		SimpleDataSet dataSet = new SimpleDataSet(dataSetDefinition, context);
+		for (Object[] o : list) {
+			DataSetRow row = new DataSetRow();
+			row.addColumnValue(new DataSetColumn("st_id", "st_id", String.class), o[0]);
+			row.addColumnValue(new DataSetColumn("patient_id", "patient_id", String.class), o[1]);
+			row.addColumnValue(new DataSetColumn("ID_National", "ID_National", String.class), o[2]);
+			row.addColumnValue(new DataSetColumn("Nom", "Nom", String.class), o[3]);
+			row.addColumnValue(new DataSetColumn("Prenom", "Prenom", String.class), o[4]);
+			row.addColumnValue(new DataSetColumn("Age", "Age", String.class), o[5]);
+			row.addColumnValue(new DataSetColumn("Sexe", "Sexe", String.class), o[6]);
+			dataSet.addRow(row);
+		}
+		return dataSet;
+	}
+
+	@Override
+	public DataSet weeklyMonitoringReportpatientList(Integer id, String startDate, String endDate) {
+		
+		EvaluationContext context = new EvaluationContext();
+		SqlDataSetDefinition dataSetDefinition = new SqlDataSetDefinition();
+		
+		//PatientIdentifierType primaryIdentifierType = emrApiProperties.getPrimaryIdentifierType();
+		StringBuilder sqlQuery = new StringBuilder("select "
+		        + "distinct p.st_id as st_id, p.patient_id, p.national_id as national_id, p.given_name as Prénom, p.family_name as Nom, TIMESTAMPDIFF(YEAR,p.birthdate,now()) as Age, p.gender as Sexe");
+		sqlQuery.append(" FROM isanteplus.patient p, isanteplus.indicators ind");
+		sqlQuery.append(" WHERE p.patient_id = ind.patient_id");
+		sqlQuery.append(" AND ind.indicator_type_id = " + id);
+		if (startDate != null) {
+			sqlQuery.append(" AND DATE(ind.indicator_date) >= '" + startDate + "'");
+		}
+		if (endDate != null) {
+			sqlQuery.append(" AND DATE(ind.indicator_date) <= '" + endDate + "'");
+		}
+		
+		SQLQuery query = dao.getSessionFactoryResult().createSQLQuery(sqlQuery.toString());
+		List<Object[]> list = query.list();
+		SimpleDataSet dataSet = new SimpleDataSet(dataSetDefinition, context);
+		for (Object[] o : list) {
+			DataSetRow row = new DataSetRow();
+			row.addColumnValue(new DataSetColumn("st_id", "st_id", String.class), o[0]);
+			row.addColumnValue(new DataSetColumn("patient_id", "patient_id", String.class), o[1]);
+			row.addColumnValue(new DataSetColumn("ID_National", "ID_National", String.class), o[2]);
+			row.addColumnValue(new DataSetColumn("Nom", "Nom", String.class), o[3]);
+			row.addColumnValue(new DataSetColumn("Prenom", "Prenom", String.class), o[4]);
+			row.addColumnValue(new DataSetColumn("Age", "Age", String.class), o[5]);
+			row.addColumnValue(new DataSetColumn("Sexe", "Sexe", String.class), o[6]);
+			dataSet.addRow(row);
+		}
+		return dataSet;
+	}
+	
+	@Override
+	public DataSet patientImmunizationDoses(Patient p) {
+		
+		EvaluationContext context = new EvaluationContext();
+		SqlDataSetDefinition dataSetDefinition = new SqlDataSetDefinition();
+		
+		StringBuilder sqlQuery = new StringBuilder("select "
+		        + "distinct il.vaccine_name as Nom, id.dose0, id.dose1, id.dose2, id.dose3, id.dose4, id.dose5");
+		sqlQuery.append(" FROM isanteplus.immunization_lookup il");
+		sqlQuery.append(" LEFT OUTER JOIN isanteplus.immunization_dose id");
+		sqlQuery.append(" ON il.vaccine_concept_id = id.vaccine_concept_id");
+		sqlQuery.append(" AND id.patient_id = " + p.getPatientId());
+		sqlQuery.append(" ORDER BY il.id ASC");
+		
+		SQLQuery query = dao.getSessionFactoryResult().createSQLQuery(sqlQuery.toString());
+		List<Object[]> list = query.list();
+		SimpleDataSet dataSet = new SimpleDataSet(dataSetDefinition, context);
+		for (Object[] o : list) {
+			DataSetRow row = new DataSetRow();
+			row.addColumnValue(new DataSetColumn("Nom", "Nom", String.class), o[0]);
+			row.addColumnValue(new DataSetColumn("Dose0", "Dose0", String.class), o[1]);
+			row.addColumnValue(new DataSetColumn("Dose1", "Dose1", String.class), o[2]);
+			row.addColumnValue(new DataSetColumn("Dose2", "Dose2", String.class), o[3]);
+			row.addColumnValue(new DataSetColumn("Dose3", "Dose3", String.class), o[4]);
+			row.addColumnValue(new DataSetColumn("Dose4", "Dose4", String.class), o[5]);
+			row.addColumnValue(new DataSetColumn("Dose5", "Dose5", String.class), o[6]);
+			dataSet.addRow(row);
+		}
+		return dataSet;
 	}
 	
 }

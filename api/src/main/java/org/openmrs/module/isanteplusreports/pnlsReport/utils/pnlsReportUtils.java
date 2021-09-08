@@ -191,7 +191,7 @@ public class pnlsReportUtils {
 		constructColumn("TSG" + column, "Transgender", CohortIndicator, "keyPopn=TRANSG", dsd);
 		constructColumn("CP" + column, "Captives", CohortIndicator, "keyPopn=CAPT", dsd);
 		constructColumn("DRUG" + column, "Drug Users", CohortIndicator, "keyPopn=DRUG", dsd);
-		constructColumn("Total" + column, "Tatal", CohortIndicator, "", dsd);
+		constructColumn("Total" + column, "Total", CohortIndicator, "", dsd);
 	}
 	
 	public static void addKeyPopulationSingleRowColums(CohortIndicatorDataSetDefinition dsd,

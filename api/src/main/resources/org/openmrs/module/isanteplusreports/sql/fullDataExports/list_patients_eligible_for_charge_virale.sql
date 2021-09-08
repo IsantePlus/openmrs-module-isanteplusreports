@@ -8,4 +8,5 @@ AND p.patient_id NOT IN(SELECT pl.patient_id FROM isanteplus.patient_laboratory 
 		WHERE pl.test_id IN(856, 1305) AND pl.test_done=1 AND pl.voided <> 1 AND ((pl.test_result is not null) OR (pl.test_result <> '')))
 AND p.patient_id NOT IN (select enc.patient_id FROM openmrs.encounter enc, openmrs.encounter_type et 
 			where enc.encounter_type = et.encounter_type_id AND et.uuid = '9d0113c6-f23a-4461-8428-7e9a7344f2ba')
-AND p.vih_status = 1;
+AND p.patient_id NOT IN (SELECT ex.patient_id FROM isanteplus.exposed_infants ex)
+			AND p.vih_status = 1;
