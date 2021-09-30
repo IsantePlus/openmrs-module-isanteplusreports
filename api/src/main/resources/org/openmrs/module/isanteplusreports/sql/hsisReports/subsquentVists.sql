@@ -1,6 +1,6 @@
-SELECT p.patient_id 
-FROM openmrs.patient p INNER JOIN openmrs.visit v ON p.patient_id = v.patient_id 
-    WHERE v.date_started = (SELECT MAX(v2.date_started) FROM openmrs.visit v2 WHERE v2.patient_id = p.patient_id AND v2.date_started BETWEEN :startDate AND :endDate)
-    AND v.date_started > (SELECT MIN(v2.date_started) FROM openmrs.visit v2 WHERE v2.patient_id = p.patient_id)
-    AND v.date_started IS NOT NULL
-    AND v.date_started BETWEEN :startDate AND :endDate;
+SELECT vd.patient_id 
+FROM isanteplus.vists_distribution vd 
+    WHERE vd.vist_date = (SELECT MAX(vd2.vist_date) FROM isanteplus.vists_distribution vd2  WHERE vd2.patient_id = vd.patient_id AND  vd2.vist_type = 'SUBSQUENT' AND  vd2.vist_date  BETWEEN :startDate AND :endDate)
+    AND vd.vist_type = 'SUBSQUENT'
+    AND vd.vist_date IS NOT NULL
+    AND vd.vist_date BETWEEN :startDate AND :endDate; 

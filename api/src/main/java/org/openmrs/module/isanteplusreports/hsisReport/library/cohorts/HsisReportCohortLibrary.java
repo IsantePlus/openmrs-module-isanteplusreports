@@ -59,8 +59,13 @@ public class HsisReportCohortLibrary {
     return cohortDefinition;
   }
 
-  public static CohortDefinition  positiveMicroscopicFastCohort() {
-    SqlCohortDefinition cohortDefinition = cohortDefinitionFromSqlResource("positiveMicroscopicFast.sql", "Number of people tested for Malaria");
+  public static CohortDefinition  malariaTestPosisitveCohort() {
+    SqlCohortDefinition cohortDefinition = cohortDefinitionFromSqlResource("malariaTestPosisitve.sql", "Number of people tested positive for Malaria");
+    return cohortDefinition;
+  }
+
+  public static CohortDefinition  malariaTestCohort() {
+    SqlCohortDefinition cohortDefinition = cohortDefinitionFromSqlResource("malariaTest.sql", "Number of people tested for Malaria");
     return cohortDefinition;
   }
 

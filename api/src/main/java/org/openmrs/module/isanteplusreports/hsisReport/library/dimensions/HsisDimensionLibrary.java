@@ -7,7 +7,6 @@ import static org.openmrs.module.isanteplusreports.hsisReport.library.cohorts.Hs
 import static org.openmrs.module.isanteplusreports.hsisReport.library.cohorts.HsisReportCohortLibrary.fastTestCohort;
 import static org.openmrs.module.isanteplusreports.hsisReport.library.cohorts.HsisReportCohortLibrary.microscopicTestAndPositiveCohort;
 import static org.openmrs.module.isanteplusreports.hsisReport.library.cohorts.HsisReportCohortLibrary.fastTestAndPositiveCohort;
-import static org.openmrs.module.isanteplusreports.hsisReport.library.cohorts.HsisReportCohortLibrary.positiveMicroscopicFastCohort;
 import static org.openmrs.module.isanteplusreports.hsisReport.library.cohorts.HsisReportCohortLibrary.hemogramCohort;
 import static org.openmrs.module.isanteplusreports.hsisReport.library.cohorts.HsisReportCohortLibrary.vihCohort;
 import static org.openmrs.module.isanteplusreports.hsisReport.library.cohorts.HsisReportCohortLibrary.rPRCohort;
@@ -21,6 +20,8 @@ import static org.openmrs.module.isanteplusreports.hsisReport.library.cohorts.Hs
 import static org.openmrs.module.isanteplusreports.hsisReport.library.cohorts.HsisReportCohortLibrary.positiveSicklingTestCohort;
 import static org.openmrs.module.isanteplusreports.hsisReport.library.cohorts.HsisReportCohortLibrary.positiveOtherSicklingTestCohort;
 import static org.openmrs.module.isanteplusreports.hsisReport.library.cohorts.HsisReportCohortLibrary.zeroToThreeMonthsCohort;
+
+import java.util.Date;
 
 import org.openmrs.module.isanteplusreports.hsisReport.library.cohorts.HsisReportCohortLibrary;
 
@@ -77,13 +78,25 @@ import static org.openmrs.module.isanteplusreports.hsisReport.library.cohorts.Hs
 import static org.openmrs.module.isanteplusreports.hsisReport.library.cohorts.HsisReportCohortLibrary.dt2VaccinesCohort;
 import static org.openmrs.module.isanteplusreports.hsisReport.library.cohorts.HsisReportCohortLibrary.vaccinesPregantWomenCommCohort;
 import static org.openmrs.module.isanteplusreports.hsisReport.library.cohorts.HsisReportCohortLibrary.vaccinesPregantWomenInstCohort;
+import static org.openmrs.module.isanteplusreports.hsisReport.library.cohorts.HsisReportCohortLibrary.malariaTestCohort;
+import static org.openmrs.module.isanteplusreports.hsisReport.library.cohorts.HsisReportCohortLibrary.malariaTestPosisitveCohort;
 
+
+import org.openmrs.module.reporting.evaluation.parameter.Parameter;
 
 import org.openmrs.module.isanteplusreports.reporting.utils.ReportUtils;
 import org.openmrs.module.reporting.indicator.dimension.CohortDefinitionDimension;
 
 
 public class HsisDimensionLibrary {
+
+  private static final String DATE_PARAMS = "startDate=${startDate},endDate=${endDate}";
+
+  private final static Parameter START_DATE = new Parameter("startDate", "isanteplusreports.parameters.startdate",
+	        Date.class);
+	
+	private final static Parameter END_DATE = new Parameter("endDate", "isanteplusreports.parameters.enddate", Date.class);
+
     
     public static CohortDefinitionDimension generalDimension(){		  
         CohortDefinitionDimension dim = new CohortDefinitionDimension();		  		  
@@ -96,12 +109,16 @@ public class HsisDimensionLibrary {
 
     public static CohortDefinitionDimension malariaDimension(){
       CohortDefinitionDimension dim = new CohortDefinitionDimension();
+        dim.addParameter(START_DATE);
+        dim.addParameter(END_DATE);		  		  
         dim.setName("malariaExam");
-        dim.addCohortDefinition("microscopicTestPositive", ReportUtils.map(microscopicTestAndPositiveCohort()));
-        dim.addCohortDefinition("fastTestPositive", ReportUtils.map(fastTestAndPositiveCohort()));
-        dim.addCohortDefinition("fastTestPositiveMicroscopicFast", ReportUtils.map(positiveMicroscopicFastCohort()));
-        dim.addCohortDefinition("microscopicTest", ReportUtils.map(microscopicTestCohort()));
-        dim.addCohortDefinition("fastTest", ReportUtils.map(fastTestCohort()));
+        dim.addCohortDefinition("microscopicTestPositive", ReportUtils.map(microscopicTestAndPositiveCohort(),DATE_PARAMS));
+        dim.addCohortDefinition("fastTestPositive", ReportUtils.map(fastTestAndPositiveCohort(),DATE_PARAMS));
+        dim.addCohortDefinition("microscopicTest", ReportUtils.map(microscopicTestCohort(),DATE_PARAMS));
+        dim.addCohortDefinition("fastTest", ReportUtils.map(fastTestCohort(),DATE_PARAMS));
+        dim.addCohortDefinition("malariaTest", ReportUtils.map(malariaTestCohort(),DATE_PARAMS));
+        dim.addCohortDefinition("malariaTestPositive", ReportUtils.map(malariaTestPosisitveCohort(),DATE_PARAMS));
+
       return dim;				  		  
       }	
 

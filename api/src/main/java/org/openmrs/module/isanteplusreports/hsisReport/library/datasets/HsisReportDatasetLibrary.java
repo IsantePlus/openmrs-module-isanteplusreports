@@ -62,6 +62,8 @@ import org.openmrs.module.reporting.evaluation.parameter.Parameter;;
 
 public class HsisReportDatasetLibrary {
 
+  private static final String DATE_PARAMS = "startDate=${startDate},endDate=${endDate}";
+
   private final static Parameter START_DATE = new Parameter("startDate", "isanteplusreports.parameters.startdate",
       Date.class);
 
@@ -85,7 +87,7 @@ public class HsisReportDatasetLibrary {
     dsd.setName("laboratory");
     dsd.addParameter(START_DATE);
     dsd.addParameter(END_DATE);
-    dsd.addDimension("malariaExam", ReportUtils.map(malariaDimension()));
+    dsd.addDimension("malariaExam", ReportUtils.map(malariaDimension(),DATE_PARAMS));
     dsd.addDimension("pregnantWomen", ReportUtils.map(pregnantDimension()));
     HsisReportColumns.addColumsForPregnantWomen(dsd, getPregnantWomenMalariaIndicator());
     HsisReportColumns.addColumsForPregnantWomen(dsd, getOtherGroupsMalariaIndicator());
