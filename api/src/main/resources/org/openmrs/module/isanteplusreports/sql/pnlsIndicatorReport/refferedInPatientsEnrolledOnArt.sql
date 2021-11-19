@@ -1,3 +1,5 @@
+/*2: Enrôlement et référence des personnes des populations clés*/
+/*2)Préalablement enrôlées et référées */
 SELECT p.patient_id
 FROM isanteplus.patient p
         WHERE p.transferred_in = 1

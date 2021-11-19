@@ -1,8 +1,12 @@
 SELECT p.patient_id 
-FROM isanteplus.patient p ,isanteplus.patient_dispensing pd , isanteplus.patient_on_art pat ,(SELECT pd.patient_id,MIN(pd.visit_date) AS min_vist_date FROM isanteplus.patient_dispensing pd WHERE  pd.drug_id  =78280 AND pd.rx_or_prophy = 163768 GROUP BY 1) B
+FROM isanteplus.patient p, isanteplus.patient_dispensing pd, 
+isanteplus.patient_on_art pat, 
+(SELECT pd.patient_id,MIN(pd.visit_date) AS min_vist_date 
+	FROM isanteplus.patient_dispensing pd WHERE  pd.drug_id = 78280 
+	AND pd.rx_or_prophy = 163768 GROUP BY 1) B
       WHERE p.patient_id = pd.patient_id
       AND p.patient_id = pat.patient_id
-	  AND p.transferred_in = 0
+	  AND p.transferred_in <> 1
 	  AND p.patient_id = B.patient_id
       AND (p.birthdate <>'' AND p.birthdate is not null)
       AND p.date_started_arv IS NOT NULL
