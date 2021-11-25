@@ -8,7 +8,7 @@ isanteplus.patient p,(SELECT psa.patient_id,
     WHERE ps.patient_id = pat.patient_id
     AND p.patient_id = pat.patient_id
     AND ps.patient_id = B.patient_id
-    AND DATE(psa.date_started_status) = DATE(B.date_status)
+    AND DATE(ps.date_started_status) = DATE(B.date_status)
 	AND ps.id_status IN (6,8)
 	AND p.date_started_arv  <= :endDate
     AND ps.date_started_status BETWEEN :startDate AND :endDate
