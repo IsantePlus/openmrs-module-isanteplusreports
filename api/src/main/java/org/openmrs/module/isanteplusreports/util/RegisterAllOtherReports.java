@@ -111,6 +111,7 @@ public class RegisterAllOtherReports extends SessionContext {
 		listPatientSuspectedCovid19();
 		listPatientConfirmCovid19();
 		hivPatientsWithoutPositiveHivTest();
+		listActivePatientsWithViralLoadTwelveMonths();
 	}
 
 	private static void cleanTables() {
@@ -553,4 +554,10 @@ public class RegisterAllOtherReports extends SessionContext {
 				"Liste des patients VIH sans test VIH positif", IsantePlusReportsProperties.PATIENTS_HIV_WITHOUT_POSITIVE_HIV_TEST);
 	
 	}
+	
+	private static void listActivePatientsWithViralLoadTwelveMonths() {
+		IsantePlusReportsUtil.registerReportsWithStartAndEndDateParams("active_patient_viral_load_last_twelve_months.sql","Patient Actif avec une charge virale pendant les 12 derniers mois",
+				"Patient Actif avec une charge virale pendant les 12 derniers mois", IsantePlusReportsProperties.ACTIVE_PATIENTS_VIRALLOAD_TWELVE_MONTHS);
+	}
+	
 }

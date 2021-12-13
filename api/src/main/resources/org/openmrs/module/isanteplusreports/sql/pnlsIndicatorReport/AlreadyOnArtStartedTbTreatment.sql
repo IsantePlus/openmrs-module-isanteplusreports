@@ -4,13 +4,14 @@ FROM isanteplus.patient p,isanteplus.patient_dispensing pd,
 FROM isanteplus.patient_dispensing pd WHERE pd.drug_id = 78280 
 AND pd.rx_or_prophy = 163768 GROUP BY 1) B
         WHERE p.patient_id = pd.patient_id
-		AND p.transferred_in = 0
+		AND p.transferred_in <> 1
 		AND p.patient_id = B.patient_id
         AND (p.birthdate <>'' AND p.birthdate is not null)
         AND p.date_started_arv IS NOT NULL
 		AND p.date_started_arv < :startDate 
 		AND pd.drug_id = 78280
 		AND pd.rx_or_prophy = 163768
-		AND pd.visit_date = B.min_vist_date
+		AND DATE(pd.visit_date) = DATE(B.min_vist_date)
 		AND pd.visit_date BETWEEN :startDate AND :endDate
-		AND p.voided = 0;
+		AND p.voided <> 1
+		AND pd.voided <> 1;

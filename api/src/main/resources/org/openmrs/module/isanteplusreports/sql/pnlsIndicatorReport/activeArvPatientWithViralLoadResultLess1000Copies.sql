@@ -27,4 +27,5 @@ isanteplus.patient_laboratory pl, isanteplus.patient_on_art pat,
 	 AND pl.viral_load_target_or_routine <> 2
 	 AND pl.voided <> 1
 	 AND (p.birthdate IS NOT NULL OR p.birthdate <> "")
-	 AND ((pl.test_id = 856 AND pl.test_result < 1000) OR (pl.test_id = 1305 AND pl.test_result = 1306));
+	 AND ((pl.test_id = 856 AND pl.test_result < 1000) OR (pl.test_id = 1305 AND pl.test_result = 1306))
+	 AND p.voided <> 1;

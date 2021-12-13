@@ -192,4 +192,6 @@ public class IsantePlusReportsProperties{
 	public static final String PATIENTS_SUSPECTED_COVID19 = "27f98dae-6c6d-4424-87d2-bd41305253f4";
 	
 	public static final String PATIENTS_HIV_WITHOUT_POSITIVE_HIV_TEST = "3d931155-97ce-4c83-8652-37735bf48e45";
+	
+	public static final String ACTIVE_PATIENTS_VIRALLOAD_TWELVE_MONTHS = "bb53535b-4d85-4315-8506-8b242e60cfd9";
 }

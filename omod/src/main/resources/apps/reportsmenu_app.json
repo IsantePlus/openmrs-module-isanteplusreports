@@ -817,6 +817,15 @@
               "url": "isanteplusreports/psychoSocialIndicatorReport.page",
               "order": 209,
               "requiredPrivilege": "App: reportingui.reports"
+            },
+            {
+                "id": "isanteplusreports.reports.activePatientsWithViralLoadLastTwelveMonths",
+                "extensionPointId": "org.openmrs.module.reportingui.reports.overview",
+                "type": "link",
+                "label": "isanteplusreports.reports.activePatientsWithViralLoadLastTwelveMonths",
+                "url": "reportingui/runReport.page?reportDefinition=bb53535b-4d85-4315-8506-8b242e60cfd9",
+                "order": 210,
+                "requiredPrivilege": "App: reportingui.reports"
             }
             
 

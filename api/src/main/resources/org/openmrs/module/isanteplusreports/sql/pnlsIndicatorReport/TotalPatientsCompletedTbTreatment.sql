@@ -13,4 +13,5 @@ FROM isanteplus.patient p ,isanteplus.patient_dispensing pd , isanteplus.patient
 	  AND TIMESTAMPDIFF(MONTH,pd.visit_date ,:endDate) >= 6
 	  AND TIMESTAMPDIFF(MONTH,pd.visit_date ,:endDate) < 7 
 	  AND pat.date_completed_preventive_tb_treatment BETWEEN :startDate AND :endDate 
-	  AND p.voided = 0;
+	  AND p.voided <> 1
+	  AND pd.voided <> 1;

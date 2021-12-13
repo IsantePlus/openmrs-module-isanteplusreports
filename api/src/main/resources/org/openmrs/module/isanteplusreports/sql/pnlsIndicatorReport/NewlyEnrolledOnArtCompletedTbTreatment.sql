@@ -17,4 +17,5 @@ WHERE pd.drug_id = 78280 AND pd.rx_or_prophy = 163768 GROUP BY 1)B
 	  AND TIMESTAMPDIFF(MONTH,pd.visit_date,:endDate) >= 6
 	  AND TIMESTAMPDIFF(MONTH,pd.visit_date,:endDate) < 7 
 	  AND pat.date_completed_preventive_tb_treatment BETWEEN :startDate AND :endDate 
-	  AND p.voided = 0;
+	  AND p.voided <> 1
+	  AND pd.voided <> 1;

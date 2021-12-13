@@ -17,4 +17,5 @@ isanteplus.patient_laboratory pl , isanteplus.patient_on_art pat,
 	 AND pat.viral_load_targeted = 1 
 	 AND pl.viral_load_target_or_routine = 2
 	 AND pl.voided <> 1
-	 AND (p.birthdate IS NOT NULL OR p.birthdate <> "");
+	 AND (p.birthdate IS NOT NULL OR p.birthdate <> "")
+	 AND p.voided <> 1;

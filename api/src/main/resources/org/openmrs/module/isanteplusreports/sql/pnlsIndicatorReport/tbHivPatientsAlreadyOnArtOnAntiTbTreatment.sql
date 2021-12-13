@@ -6,4 +6,5 @@ FROM isanteplus.patient_status_arv ps ,isanteplus.patient_on_art pat , isanteplu
 	AND p.date_started_arv  < :startDate 
     AND ps.date_started_status BETWEEN :startDate AND :endDate
     AND pat.date_enrolled_on_tb_treatment IS NOT NUlL 
-	AND pat.date_enrolled_on_tb_treatment BETWEEN :startDate AND :endDate ;
+	AND pat.date_enrolled_on_tb_treatment BETWEEN :startDate AND :endDate 
+	AND p.voided <> 1;

@@ -16,5 +16,6 @@ isanteplus.patient_laboratory pl, isanteplus.patient_on_art pat,
 	 AND pl.voided <> 1
 	 AND TIMESTAMPDIFF(MONTH, pl.date_test_done, :endDate) >= 12
 	 AND pl.viral_load_target_or_routine <> 2
-	 AND (p.birthdate IS NOT NULL OR p.birthdate <> "");
+	 AND (p.birthdate IS NOT NULL OR p.birthdate <> "")
+	 AND p.voided <> 1;
 	 

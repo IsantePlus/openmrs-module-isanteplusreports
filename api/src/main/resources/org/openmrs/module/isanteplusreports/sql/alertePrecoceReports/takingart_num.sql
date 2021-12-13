@@ -6,6 +6,7 @@ AND DATE(pdisp.next_dispensation_date) between :startDate AND :endDate
 GROUP BY 1) B
 WHERE p.patient_id = patd.patient_id
 AND patd.patient_id = B.patient_id
-AND DATE(patd.visit_date) >= DATE(B.next_visit)
+/*AND DATE(patd.visit_date) >= DATE(B.next_visit)*/
+AND DATE(patd.next_dispensation_date) >= DATE(B.next_visit)
 AND DATE(patd.visit_date) BETWEEN :startDate AND :endDate
 AND patd.arv_drug = 1065;

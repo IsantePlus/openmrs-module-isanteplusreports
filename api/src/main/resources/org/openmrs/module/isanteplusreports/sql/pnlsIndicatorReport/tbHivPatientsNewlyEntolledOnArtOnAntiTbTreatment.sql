@@ -11,4 +11,5 @@ isanteplus.patient p, (SELECT psa.patient_id, MAX(DATE(psa.date_started_status))
 	AND p.date_started_arv  BETWEEN :startDate AND :endDate 
     AND ps.date_started_status BETWEEN :startDate AND :endDate
     AND pat.date_enrolled_on_tb_treatment IS NOT NUlL 
-	AND pat.date_enrolled_on_tb_treatment BETWEEN :startDate AND :endDate ;
+	AND pat.date_enrolled_on_tb_treatment BETWEEN :startDate AND :endDate 
+	AND p.voided <> 1;
