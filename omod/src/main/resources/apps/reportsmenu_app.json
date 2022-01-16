@@ -826,6 +826,33 @@
                 "url": "reportingui/runReport.page?reportDefinition=bb53535b-4d85-4315-8506-8b242e60cfd9",
                 "order": 210,
                 "requiredPrivilege": "App: reportingui.reports"
+            },
+            {
+                "id": "isanteplusreports.reports.activePatientsScreenedForTb",
+                "extensionPointId": "org.openmrs.module.reportingui.reports.overview",
+                "type": "link",
+                "label": "isanteplusreports.reports.activePatientsScreenedForTb",
+                "url": "reportingui/runReport.page?reportDefinition=8a6bf7f0-5a50-4221-83ad-61d29057864e",
+                "order": 211,
+                "requiredPrivilege": "App: reportingui.reports"
+            },
+            {
+                "id": "isanteplusreports.reports.patientWithIncompleteProphylaxisAgainstTb",
+                "extensionPointId": "org.openmrs.module.reportingui.reports.overview",
+                "type": "link",
+                "label": "isanteplusreports.reports.patientWithIncompleteProphylaxisAgainstTb",
+                "url": "reportingui/runReport.page?reportDefinition=f48cf8ec-feb2-4473-89ec-4ab19dc48738",
+                "order": 212,
+                "requiredPrivilege": "App: reportingui.reports"
+            },
+            {
+                "id": "isanteplusreports.reports.patientScreenedNegativeAgainstTbWithNoProphylaxis",
+                "extensionPointId": "org.openmrs.module.reportingui.reports.overview",
+                "type": "link",
+                "label": "isanteplusreports.reports.patientScreenedNegativeAgainstTbWithNoProphylaxis",
+                "url": "reportingui/runReport.page?reportDefinition=85d9ca70-81d7-4082-93c0-d9eeed450632",
+                "order": 212,
+                "requiredPrivilege": "App: reportingui.reports"
             }
             
 

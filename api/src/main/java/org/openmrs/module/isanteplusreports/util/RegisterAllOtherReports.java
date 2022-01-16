@@ -112,6 +112,9 @@ public class RegisterAllOtherReports extends SessionContext {
 		listPatientConfirmCovid19();
 		hivPatientsWithoutPositiveHivTest();
 		listActivePatientsWithViralLoadTwelveMonths();
+		listActivePatientsScreenedForTb();
+		patientWithIncompleteProphylaxisAgainstTb();
+		patientScreenedNegativeAgainstTbWithNoProphylaxis();
 	}
 
 	private static void cleanTables() {
@@ -558,6 +561,21 @@ public class RegisterAllOtherReports extends SessionContext {
 	private static void listActivePatientsWithViralLoadTwelveMonths() {
 		IsantePlusReportsUtil.registerReportsWithStartAndEndDateParams("active_patient_viral_load_last_twelve_months.sql","Patient Actif avec une charge virale pendant les 12 derniers mois",
 				"Patient Actif avec une charge virale pendant les 12 derniers mois", IsantePlusReportsProperties.ACTIVE_PATIENTS_VIRALLOAD_TWELVE_MONTHS);
+	}
+	
+	private static void listActivePatientsScreenedForTb() {
+		IsantePlusReportsUtil.registerReportsWithStartAndEndDateParams("activePatientsScreenedForTb.sql","Patients VIH+ actifs sous ARV dépistés pour la TB",
+				"Patients VIH+ actifs sous ARV dépistés pour la TB", IsantePlusReportsProperties.ACTIVE_PATIENTS_SCREENED_FOR_TB_UUID);
+	}
+	
+	private static void patientWithIncompleteProphylaxisAgainstTb() {
+		IsantePlusReportsUtil.registerReportsWithStartAndEndDateParams("patientWithIncompleteProphylaxisAgainstTb.sql","Patients avec Prophylaxie incomplète contre la TB",
+				"Patients avec Prophylaxie incomplète contre la TB", IsantePlusReportsProperties.PATIENT_WITH_INCOMPLETE_PROPHYLAXIS_AGAINST_TB_UUID);
+	}
+	
+	private static void patientScreenedNegativeAgainstTbWithNoProphylaxis() {
+		IsantePlusReportsUtil.registerReportsWithStartAndEndDateParams("patientScreenedNegativeAgainstTbWithNoProphylaxis.sql","Patients dépistés négatifs pour la TB n’ayant pas reçu de prophylaxie",
+				"Patients dépistés négatifs pour la TB n’ayant pas reçu de prophylaxie", IsantePlusReportsProperties.PATIENT_SCREENED_NEGATIVE_AGAINST_TB_WITH_NO_PROPHYLAXIS_UUID);
 	}
 	
 }

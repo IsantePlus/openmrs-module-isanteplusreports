@@ -194,4 +194,10 @@ public class IsantePlusReportsProperties{
 	public static final String PATIENTS_HIV_WITHOUT_POSITIVE_HIV_TEST = "3d931155-97ce-4c83-8652-37735bf48e45";
 	
 	public static final String ACTIVE_PATIENTS_VIRALLOAD_TWELVE_MONTHS = "bb53535b-4d85-4315-8506-8b242e60cfd9";
+	
+	public static final String ACTIVE_PATIENTS_SCREENED_FOR_TB_UUID = "8a6bf7f0-5a50-4221-83ad-61d29057864e";
+	
+	public static final String PATIENT_WITH_INCOMPLETE_PROPHYLAXIS_AGAINST_TB_UUID = "f48cf8ec-feb2-4473-89ec-4ab19dc48738";
+	
+	public static final String PATIENT_SCREENED_NEGATIVE_AGAINST_TB_WITH_NO_PROPHYLAXIS_UUID = "85d9ca70-81d7-4082-93c0-d9eeed450632";
 }
