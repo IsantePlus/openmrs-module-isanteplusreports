@@ -851,7 +851,16 @@
                 "type": "link",
                 "label": "isanteplusreports.reports.patientScreenedNegativeAgainstTbWithNoProphylaxis",
                 "url": "reportingui/runReport.page?reportDefinition=85d9ca70-81d7-4082-93c0-d9eeed450632",
-                "order": 212,
+                "order": 213,
+                "requiredPrivilege": "App: reportingui.reports"
+            },
+            {
+                "id": "isanteplusreports.report.ddp",
+                "extensionPointId": "org.openmrs.module.reportingui.reports.overview",
+                "type": "link",
+                "label": "isanteplusreports.report.ddp",
+                "url": "isanteplusreports/ddpByPeriodReport.page",
+                "order": 214,
                 "requiredPrivilege": "App: reportingui.reports"
             }
             

@@ -101,6 +101,9 @@ public interface IsantePlusReportsService extends OpenmrsService {
 	DataSet weeklyMonitoringReportpatientList(Integer id, String startDate, String endDate);
 
 	DataSet patientImmunizationDoses(Patient p);
-	
+
+	DataSet psychoSocialSummary(Patient p);
+
+	DataSet patientListDdpByPeriod(int id, String datA, String datB);
 	
 }

@@ -200,4 +200,6 @@ public class IsantePlusReportsProperties{
 	public static final String PATIENT_WITH_INCOMPLETE_PROPHYLAXIS_AGAINST_TB_UUID = "f48cf8ec-feb2-4473-89ec-4ab19dc48738";
 	
 	public static final String PATIENT_SCREENED_NEGATIVE_AGAINST_TB_WITH_NO_PROPHYLAXIS_UUID = "85d9ca70-81d7-4082-93c0-d9eeed450632";
+
+	public static final String DDPREPORTBYPERIOD_UUID = "3510620c-5eb8-4ca0-b680-eebc80502ebc";
 }

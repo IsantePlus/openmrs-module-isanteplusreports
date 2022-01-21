@@ -9,7 +9,7 @@
     var breadcrumbs = [
         { icon: "icon-home", link: '/' + OPENMRS_CONTEXT_PATH + '/index.htm' },
         { label: "${ ui.escapeJs(ui.message("reportingui.reportsapp.home.title")) }", link: emr.pageLink("reportingui", "reportsapp/home") },
-        { label: "${ ui.message("isanteplusreports.patientArvByPeriod") }", link: "${ ui.thisUrl() }" }
+        { label: "${ ui.message("isanteplusreports.report.ddp") }", link: "${ ui.thisUrl() }" }
     ];
 </script>
 <script type="text/javascript">
@@ -75,10 +75,10 @@
 </script>
 <div>
 	<input type='button' id='btn' value='${ ui.message("isanteplusreports.print") }' onclick='printDiv();'/>&nbsp;&nbsp;
-	<input type='button' id='btnExport' value='${ ui.message("isanteplusreports.export") }' onclick="tablesToExcel(['tab_excel'], ['Patients_arv'], 'PatientsArvByPeriod.xls', 'Excel')"/>
+	<input type='button' id='btnExport' value='${ ui.message("isanteplusreports.export") }' onclick="tablesToExcel(['tab_excel'], ['Patients_arv'], 'DdpReportList.xls', 'Excel')"/>
 </div><br/>
-<div id="DivIdToPrint" ng-app="arvByPeriodReport" ng-controller="ArvByPeriodReportController">
-	 ${ ui.message("isanteplusreports.patientArvByPeriodList") } ${ ui.message("isanteplusreports.from") } ${ ui.format(startDate) } ${ ui.message("isanteplusreports.to") } ${ ui.format(endDate) } <br/><br/>
+<div id="DivIdToPrint" ng-app="ddpByPeriodReport" ng-controller="DdpByPeriodReportController">
+	 ${ ui.message("isanteplusreports.report.ddp") } ${ ui.message("isanteplusreports.from") } ${ ui.format(startDate) } ${ ui.message("isanteplusreports.to") } ${ ui.format(endDate) } <br/><br/>
 	<div id="excel_div">
 	<table id="tab_excel">
 	    <tr> 
@@ -128,7 +128,7 @@
 	    </div>
 	</table>
 	<div>
-     Total : ${ui.format(i)}
+		Total : ${ui.format(i)}
 	</div>
 	</div>
 </div>
