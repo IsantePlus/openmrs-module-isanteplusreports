@@ -862,7 +862,26 @@
                 "url": "isanteplusreports/ddpByPeriodReport.page",
                 "order": 214,
                 "requiredPrivilege": "App: reportingui.reports"
+            },
+            {
+                "id": "isanteplusreports.report.patient_with_finger_print",
+                "extensionPointId": "org.openmrs.module.reportingui.reports.overview",
+                "type": "link",
+                "label": "isanteplusreports.report.patient_with_finger_print",
+                "url": "reportingui/runReport.page?reportDefinition=2a06491b-9f73-40a6-bed6-8c39fade8d7a",
+                "order": 215,
+                "requiredPrivilege": "App: reportingui.reports"
+            },
+            {
+                "id": "isanteplusreports.fingerprint.indicator.label",
+                "extensionPointId": "org.openmrs.module.reportingui.reports.overview",
+                "type": "link",
+                "label": "isanteplusreports.fingerprint.indicator.label",
+                "url": "isanteplusreports/fingerPrintIndicatorReport.page",
+                "order": 216,
+                "requiredPrivilege": "App: reportingui.reports"
             }
+            
             
 
         ],

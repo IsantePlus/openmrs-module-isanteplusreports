@@ -44,6 +44,11 @@ public class AlertPrecoceManager {
 		AlertPrecoceReportsConstants.ACTIVE_PATIENT_WITH_VL_SUP_MILLE_WITH_PSYCHO_AT_TIME_INDICATOR_UUID,
 		AlertPrecoceReportsConstants.NEW_ACTIVE_PATIENT_WITH_WITH_PSYCHO_ASSESSMENT_INDICATOR_UUID
 	};
+	
+	private static final String[] fingerPrintIndicatorsUuid = {
+		AlertPrecoceReportsConstants.ACTIVE_PATIENT_WITH_FINGER_PRINT_UUID,
+		AlertPrecoceReportsConstants.ACTIVE_PATIENT_WITHOUT_FINGER_PRINT_UUID
+	};
 
 //private Map<String, AlertPrecoceIndicatorOption> options = new HashMap<>();
 
@@ -59,6 +64,9 @@ public List<AlertPrecoceIndicator> getArtDistributionIndicators() {
 }
 public List<AlertPrecoceIndicator> getPsychoSocialIndicators() {
 	return uuidToReportDefinition(Arrays.asList(psychoSocialIndicatorsUuid));
+}
+public List<AlertPrecoceIndicator> getFingerPrintIndicators() {
+	return uuidToReportDefinition(Arrays.asList(fingerPrintIndicatorsUuid));
 }
 private List<AlertPrecoceIndicator> uuidToReportDefinition(List<String> uuids) {
 	List<AlertPrecoceIndicator> indicators = new ArrayList<AlertPrecoceIndicator>();

@@ -123,4 +123,14 @@ public class AlertPrecoceReportsConstants {
 	    public static final String NEW_ACTIVE_PATIENT_WITH_WITH_PSYCHO_ASSESSMENT_INDICATOR_MESSAGE = "isanteplusreports.psychosocial.indicator.newActivePatientWithPsychoEvaluation.label";
 	    public static final String NEW_ACTIVE_PATIENT_WITH_WITH_PSYCHO_ASSESSMENT_INDICATOR_NUM_SQL = "newActivePatientWithPsychoAssessment_num.sql";
 	    public static final String NEW_ACTIVE_PATIENT_WITH_WITH_PSYCHO_ASSESSMENTINDICATOR_DEN_SQL = "newActivePatientWithPsychoAssessment_den.sql";
+	 
+	    /*Constant for FingerPrint report*/
+	    public static final String ACTIVE_PATIENT_WITH_FINGER_PRINT_UUID = "80dc287b-9da3-45fe-b136-178cd547cbbf";
+	    public static final String ACTIVE_PATIENT_WITH_FINGER_PRINT_MESSAGE = "isanteplusreports.fingerprint.indicator.activePatientWithFingerPrint";
+	    public static final String ACTIVE_PATIENT_WITH_FINGER_PRINT_NUM_SQL = "activePatientWithFingerPrint_num.sql";
+	    public static final String ACTIVE_PATIENT_WITH_FINGER_PRINT_DEN_SQL = "activePatientWithFingerPrint_den.sql";
+	    
+	    public static final String ACTIVE_PATIENT_WITHOUT_FINGER_PRINT_UUID = "b015b45c-8af9-47dd-bbb0-5530083268c4";
+	    public static final String ACTIVE_PATIENT_WITHOUT_FINGER_PRINT_MESSAGE = "isanteplusreports.fingerprint.indicator.activePatientWithoutFingerPrint";
+	    public static final String ACTIVE_PATIENT_WITHOUT_FINGER_PRINT_NUM_SQL = "activePatientWithoutFingerPrint_num.sql";
 }

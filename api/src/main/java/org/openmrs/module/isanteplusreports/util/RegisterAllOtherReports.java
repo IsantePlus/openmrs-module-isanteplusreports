@@ -115,6 +115,7 @@ public class RegisterAllOtherReports extends SessionContext {
 		listActivePatientsScreenedForTb();
 		patientWithIncompleteProphylaxisAgainstTb();
 		patientScreenedNegativeAgainstTbWithNoProphylaxis();
+		listPatientWithFingerPrint();
 	}
 
 	private static void cleanTables() {
@@ -576,6 +577,12 @@ public class RegisterAllOtherReports extends SessionContext {
 	private static void patientScreenedNegativeAgainstTbWithNoProphylaxis() {
 		IsantePlusReportsUtil.registerReportsWithStartAndEndDateParams("patientScreenedNegativeAgainstTbWithNoProphylaxis.sql","Patients dépistés négatifs pour la TB n’ayant pas reçu de prophylaxie",
 				"Patients dépistés négatifs pour la TB n’ayant pas reçu de prophylaxie", IsantePlusReportsProperties.PATIENT_SCREENED_NEGATIVE_AGAINST_TB_WITH_NO_PROPHYLAXIS_UUID);
+	}
+	
+	private static void listPatientWithFingerPrint(){
+		IsantePlusReportsUtil.registerReportsWithoutParams("patient_with_finger_print.sql","Liste des patients avec empreinte",
+				"Liste des patients avec empreinte", IsantePlusReportsProperties.PATIENT_WITH_FINGER_PRINT_UUID);
+	
 	}
 	
 }

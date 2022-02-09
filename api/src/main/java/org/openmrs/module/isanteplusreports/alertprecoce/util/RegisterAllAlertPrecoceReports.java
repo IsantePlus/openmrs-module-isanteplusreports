@@ -53,6 +53,8 @@ public class RegisterAllAlertPrecoceReports {
 		activePatientWithViralLoadSupMilleWithThreePsycho();
 		activePatientWithViralLoadSupMilleWithPsychoAtTime();
 		newActivePatientWithPsychoAssessment();
+		activePatientWithFingerPrint();
+		activePatientWithoutFingerPrint();
 	}
 	
 	
@@ -213,6 +215,19 @@ public class RegisterAllAlertPrecoceReports {
 			AlertPrecoceReportsConstants.NEW_ACTIVE_PATIENT_WITH_WITH_PSYCHO_ASSESSMENTINDICATOR_DEN_SQL,
 			AlertPrecoceReportsConstants.NEW_ACTIVE_PATIENT_WITH_WITH_PSYCHO_ASSESSMENT_INDICATOR_MESSAGE,
 			AlertPrecoceReportsConstants.NEW_ACTIVE_PATIENT_WITH_WITH_PSYCHO_ASSESSMENT_INDICATOR_UUID);
+	}
+	
+	private static void activePatientWithFingerPrint() {
+		registerAlertPrecoceReportWithStartAndEndDateParamsNumDen(AlertPrecoceReportsConstants.ACTIVE_PATIENT_WITH_FINGER_PRINT_NUM_SQL,
+			AlertPrecoceReportsConstants.ACTIVE_PATIENT_WITH_FINGER_PRINT_DEN_SQL,
+			AlertPrecoceReportsConstants.ACTIVE_PATIENT_WITH_FINGER_PRINT_MESSAGE,
+			AlertPrecoceReportsConstants.ACTIVE_PATIENT_WITH_FINGER_PRINT_UUID);
+	}
+	private static void activePatientWithoutFingerPrint() {
+		registerAlertPrecoceReportWithStartAndEndDateParamsNumDen(AlertPrecoceReportsConstants.ACTIVE_PATIENT_WITHOUT_FINGER_PRINT_NUM_SQL,
+				AlertPrecoceReportsConstants.ACTIVE_PATIENT_WITH_FINGER_PRINT_DEN_SQL,
+				AlertPrecoceReportsConstants.ACTIVE_PATIENT_WITHOUT_FINGER_PRINT_MESSAGE,
+				AlertPrecoceReportsConstants.ACTIVE_PATIENT_WITHOUT_FINGER_PRINT_UUID);
 	}
 	
 	private static void registerAlertPrecoceReportWithStartAndEndDateParams(String sql, String messageProperties,
