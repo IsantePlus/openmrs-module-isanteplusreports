@@ -88,14 +88,14 @@ public class ViewIsantePlusIndicatorReportRequestPageController {
 					  }
 						else {
 							
-							    model.addAttribute("reportName", dataset.getDefinition().getName());
-								model.addAttribute("parameter", dataset.getDefinition().getParameters());
-								model.addAttribute("dataset", null);
-								model.addAttribute("columns", null);
-		                        model.addAttribute("reportingValues", null);
-								model.addAttribute("columnskeys", null);
-								model.addAttribute("request", null);
-								model.addAttribute("i", 0);
+							model.addAttribute("reportName", dataset.getDefinition().getName());
+							model.addAttribute("parameter", dataset.getDefinition().getParameters());
+							model.addAttribute("dataset", null);
+							model.addAttribute("reportingValues", null);
+							model.addAttribute("columnskeys", null);
+							model.addAttribute("request", requestUuid);
+							model.addAttribute("i", 0);
+							
 						}
 					}
 				}
