@@ -84,6 +84,8 @@ public class ViewIsantePlusIndicatorReportRequestPageController {
 						model.addAttribute("columnskeys", dataset.iterator().next().getColumnValuesByKey().keySet().toArray());
 						model.addAttribute("request", requestUuid);
 						model.addAttribute("i", 0);
+						
+						
 					}
 				}
 			}
