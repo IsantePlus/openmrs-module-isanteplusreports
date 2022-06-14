@@ -85,7 +85,6 @@ public class ViewIsantePlusIndicatorReportRequestPageController {
 						model.addAttribute("request", requestUuid);
 						model.addAttribute("i", 0);
 						
-						
 					}
 				}
 			}
