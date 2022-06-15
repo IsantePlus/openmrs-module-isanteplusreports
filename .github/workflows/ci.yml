@@ -40,8 +40,8 @@ jobs:
           servers: |
             [{
                 "id": "github-packages",
-                "username": "HerbertYiga",
-                "password": "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"
+                "username": "${{ secrets.RELEASE_USERNAME }}",
+                "password": "${{ secrets.RELEASE_TOKEN }}"
             }]
           githubServer: false
       - name: Build with Maven
