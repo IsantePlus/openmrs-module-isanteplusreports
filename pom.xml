@@ -42,7 +42,7 @@
 		<appuiVersion>1.8.0</appuiVersion>
 		<coreappsVersion>1.14.0</coreappsVersion>
 		<referenceapplicationVersion>2.6.0</referenceapplicationVersion>
-		<isanteplusVersion>1.2-SNAPSHOT</isanteplusVersion>
+		<isanteplusVersion>1.3.0</isanteplusVersion>
 		<j2htmlVesion>1.1.0</j2htmlVesion>
 		<flyingSaucerPdfItext5Version>9.1.6</flyingSaucerPdfItext5Version>
 		<metadatadeployVersion>1.8.1</metadatadeployVersion>
