@@ -130,7 +130,6 @@ public class ViewIsantePlusIndicatorReportRequestPageController {
 						dataset = reportData.getDataSets().get(key);
 						
 						
-						
 					}
 					// List<Parameter> parameter = dataset.getDefinition().getParameters();
 					// SimpleDateFormat parseFormater = new SimpleDateFormat("EEE MMM dd HH:mm:ss
