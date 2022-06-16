@@ -87,8 +87,8 @@ public class ViewIsantePlusIndicatorReportRequestPageController {
 						model.addAttribute("i", 0);
 					  }
 						else {
-							model.addAttribute("reportName", dataset.getDefinition().getName());
-							model.addAttribute("parameter", dataset.getDefinition().getParameters());
+							model.addAttribute("reportName", null);
+							model.addAttribute("parameter", null);
 							model.addAttribute("dataset", null);
 							model.addAttribute("reportingValues", null);
 							model.addAttribute("columnskeys", null);
