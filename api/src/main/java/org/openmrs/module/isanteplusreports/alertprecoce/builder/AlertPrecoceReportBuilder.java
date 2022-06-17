@@ -186,8 +186,8 @@ public class AlertPrecoceReportBuilder extends UiUtils {
 	
 	private void buildIndicator(DataSet data) {
 		
-		if((data.getDefinition().getName().toString().equalsIgnoreCase(translate("isanteplusreports.artdistribution.appointmentperiod.message").toString()))
-			|| (data.getDefinition().getName().toString().equalsIgnoreCase(translate("isanteplusreports.artdistribution.arvdispense.message").toString()))	
+		if((translate(data.getDefinition().getName().toString()).equalsIgnoreCase(translate("isanteplusreports.artdistribution.appointmentperiod.message").toString()))
+			|| (translate(data.getDefinition().getName().toString()).equalsIgnoreCase(translate("isanteplusreports.artdistribution.arvdispense.message").toString()))	
 		  )
 		{
 			getRows()[0].with(th(translate(data.getDefinition().getName())).attr("colspan", "3").withClass("indicatorLabel"));
@@ -201,23 +201,67 @@ public class AlertPrecoceReportBuilder extends UiUtils {
 		}
 		else
 		{
-			getRows()[0].with(th(translate(data.getDefinition().getName())).attr("colspan", "3").withClass("indicatorLabel"));
-			getRows()[1].with(td(translate("isanteplusreports.healthqual.result.numerator.label")).attr("colspan", "1").withClass("label"),
-			    td(translate("isanteplusreports.healthqual.result.denominator.label")).attr("colspan", "1").withClass("label"), td(translate("isanteplusreports.healthqual.result.percentage.label"))
-			            .attr("colspan", "1").withClass("label"));
-			Integer[] numerator = createSummaryArray(getDataSetIntegerValue(data, MALE_NUMERATOR_COLUMN_NAME),
-			    getDataSetIntegerValue(data, FEMALE_NUMERATOR_COLUMN_NAME));
+			if(translate(data.getDefinition().getName().toString()).equalsIgnoreCase(translate("isanteplusreports.report.transitionedPatient").toString())){
+				getRows()[0].with(th(translate(data.getDefinition().getName())).attr("colspan", "3").withClass("indicatorLabel"));
+				getRows()[1].with(td(translate("isanteplusreports.report.transitionedPatient.active")).attr("colspan", "1").withClass("label"),
+				    td(translate("isanteplusreports.report.transitionedPatient.inactive")).attr("colspan", "1").withClass("label"), td(translate("isanteplusreports.pnls.result.Subtotal.label"))
+				            .attr("colspan", "1").withClass("label"));
+				Integer[] numerator = createSummaryArray(getDataSetIntegerValue(data, MALE_NUMERATOR_COLUMN_NAME),
+				    getDataSetIntegerValue(data, FEMALE_NUMERATOR_COLUMN_NAME));
+				
+				String[] numeratorColumns = createSummaryColumnArray(data, TOTAL_NUMERATOR_COLUMN_NAME);
+				buildIndicatorSummary(numerator, numeratorColumns);
+				
+				Integer[] denominator = createSummaryArray(getDataSetIntegerValue(data, MALE_DENOMINATOR_COLUMN_NAME),
+				    getDataSetIntegerValue(data, FEMALE_DENOMINATOR_COLUMN_NAME));
+				
+				String[] denominatorColumns = createSummaryColumnArray(data, TOTAL_DENOMINATOR_COLUMN_NAME);
+				buildIndicatorSummary(denominator, denominatorColumns);
+				
+				buildIndicatorSummary(createTotalArray(numerator, denominator));
+			}
+			else{
+				
+				if(translate(data.getDefinition().getName().toString()).equalsIgnoreCase(translate("isanteplusreports.report.vitalStatistics").toString())){
+					getRows()[0].with(th(translate(data.getDefinition().getName())).attr("colspan", "2").withClass("indicatorLabel"));
+					getRows()[1].with(td(translate("isanteplusreports.report.vitalStatistics.birthdate")).attr("colspan", "1").withClass("label"),
+					    td(translate("isanteplusreports.report.vitalStatistics.death")).attr("colspan", "1").withClass("label"));
+					Integer[] numerator = createSummaryArray(getDataSetIntegerValue(data, MALE_NUMERATOR_COLUMN_NAME),
+					    getDataSetIntegerValue(data, FEMALE_NUMERATOR_COLUMN_NAME));
+					
+					String[] numeratorColumns = createSummaryColumnArray(data, TOTAL_NUMERATOR_COLUMN_NAME);
+					buildIndicatorSummary(numerator, numeratorColumns);
+					
+					Integer[] denominator = createSummaryArray(getDataSetIntegerValue(data, MALE_DENOMINATOR_COLUMN_NAME),
+					    getDataSetIntegerValue(data, FEMALE_DENOMINATOR_COLUMN_NAME));
+					
+					String[] denominatorColumns = createSummaryColumnArray(data, TOTAL_DENOMINATOR_COLUMN_NAME);
+					buildIndicatorSummary(denominator, denominatorColumns);
+					
+					//buildIndicatorSummary(createTotalArray(numerator, denominator));
+				}
 			
-			String[] numeratorColumns = createSummaryColumnArray(data, TOTAL_NUMERATOR_COLUMN_NAME);
-			buildIndicatorSummary(numerator, numeratorColumns);
-			
-			Integer[] denominator = createSummaryArray(getDataSetIntegerValue(data, MALE_DENOMINATOR_COLUMN_NAME),
-			    getDataSetIntegerValue(data, FEMALE_DENOMINATOR_COLUMN_NAME));
-			
-			String[] denominatorColumns = createSummaryColumnArray(data, TOTAL_DENOMINATOR_COLUMN_NAME);
-			buildIndicatorSummary(denominator, denominatorColumns);
-			
-			buildIndicatorSummary(createPercentageArray(numerator, denominator));
+			else{
+				
+				getRows()[0].with(th(translate(data.getDefinition().getName())).attr("colspan", "3").withClass("indicatorLabel"));
+				getRows()[1].with(td(translate("isanteplusreports.healthqual.result.numerator.label")).attr("colspan", "1").withClass("label"),
+				    td(translate("isanteplusreports.healthqual.result.denominator.label")).attr("colspan", "1").withClass("label"), td(translate("isanteplusreports.healthqual.result.percentage.label"))
+				            .attr("colspan", "1").withClass("label"));
+				Integer[] numerator = createSummaryArray(getDataSetIntegerValue(data, MALE_NUMERATOR_COLUMN_NAME),
+				    getDataSetIntegerValue(data, FEMALE_NUMERATOR_COLUMN_NAME));
+				
+				String[] numeratorColumns = createSummaryColumnArray(data, TOTAL_NUMERATOR_COLUMN_NAME);
+				buildIndicatorSummary(numerator, numeratorColumns);
+				
+				Integer[] denominator = createSummaryArray(getDataSetIntegerValue(data, MALE_DENOMINATOR_COLUMN_NAME),
+				    getDataSetIntegerValue(data, FEMALE_DENOMINATOR_COLUMN_NAME));
+				
+				String[] denominatorColumns = createSummaryColumnArray(data, TOTAL_DENOMINATOR_COLUMN_NAME);
+				buildIndicatorSummary(denominator, denominatorColumns);
+				
+				buildIndicatorSummary(createPercentageArray(numerator, denominator));
+			}
+		 }
 		}
 	}
 	
@@ -257,6 +301,18 @@ public class AlertPrecoceReportBuilder extends UiUtils {
 			} else {
 				result[i] = df.format(0);
 			}
+		}
+		return result;
+	}
+	
+	private String[] createTotalArray(Integer[] nbr1, Integer[] nbr2) {
+
+		final int SIZE = 1;
+		int total = 0;
+		String result[] = new String[SIZE];
+		for (int i = 0; i < SIZE; ++i) {
+				total = nbr1[i] + nbr2[i];
+				result[i] = String.valueOf(total);
 		}
 		return result;
 	}

@@ -15,6 +15,7 @@ WHERE pd.drug_id = 78280 GROUP BY 1)C
     AND DATE(pdisp.visit_date) = DATE(C.min_vist_date)
     AND DATE(ps.date_started_status) = DATE(B.date_status)
 	AND ps.id_status IN (6,8)
+	AND (p.transferred_in <> 1 OR p.transferred_in IS NULL)
 	AND p.date_started_arv BETWEEN :startDate AND :endDate
     AND ps.date_started_status BETWEEN :startDate AND :endDate
     AND pdisp.visit_date BETWEEN :startDate AND :endDate

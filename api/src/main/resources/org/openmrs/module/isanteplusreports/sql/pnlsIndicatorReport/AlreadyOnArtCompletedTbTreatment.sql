@@ -9,7 +9,7 @@ isanteplus.patient_on_art pat,
       AND p.patient_id = B.patient_id
       AND o.person_id = pd.patient_id
       AND pd.visit_date = B.min_vist_date
-	  AND p.transferred_in <> 1
+	  AND (p.transferred_in <> 1 OR p.transferred_in IS NULL)
       AND (p.birthdate <>'' AND p.birthdate is not null)
       AND p.date_started_arv IS NOT NULL
 	  AND p.date_started_arv < :startDate 

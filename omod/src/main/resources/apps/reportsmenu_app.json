@@ -880,9 +880,27 @@
                 "url": "isanteplusreports/fingerPrintIndicatorReport.page",
                 "order": 216,
                 "requiredPrivilege": "App: reportingui.reports"
+            },
+            {
+                "id": "isanteplusreports.report.transitionedPatient",
+                "extensionPointId": "org.openmrs.module.reportingui.reports.overview",
+                "type": "link",
+                "label": "isanteplusreports.report.transitionedPatient",
+                "url": "isanteplusreports/transisionedPatientIndicatorReport.page",
+                "order": 217,
+                "requiredPrivilege": "App: reportingui.reports"
+            },
+            {
+                "id": "isanteplusreports.report.vitalStatistics",
+                "extensionPointId": "org.openmrs.module.reportingui.reports.overview",
+                "type": "link",
+                "label": "isanteplusreports.report.vitalStatistics",
+                "url": "isanteplusreports/vitalStatisticsIndicator.page",
+                "order": 218,
+                "requiredPrivilege": "App: reportingui.reports"
             }
             
-            
+              
 
         ],
         "requiredPrivilege": "App: reportingui.reports"

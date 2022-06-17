@@ -31,7 +31,7 @@ WHERE
         OR p.patient_id IN (
 			SELECT plab.patient_id
             FROM isanteplus.patient_laboratory plab
-            WHERE DATE(plab.visit_date) BETWEEN :startdate AND :endDate        
+            WHERE DATE(plab.visit_date) BETWEEN :startDate AND :endDate        
         )
 
     )

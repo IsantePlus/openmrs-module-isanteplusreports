@@ -96,8 +96,8 @@ private final Log log = LogFactory.getLog(getClass());
 				"select DISTINCT pat.patient_id, pat.st_id as 'NO. de patient attribué par le site', pat.national_id as 'Numéro identité national',"
 					+ " pat.given_name as Prénom,pat.family_name as Nom, pat.gender as Sexe,"
 					+ " TIMESTAMPDIFF(YEAR, pat.birthdate,DATE(now())) as Age, arv.name_fr as 'Status de patient',"
-					+ " patstatus.start_date as 'Dernière date', pat.last_address as Adresse, pat.telephone as Téléphone,"
-					+ " pat.contact_name as Contact, pat.next_visit_date as 'Date de prochaine visite',"
+					+ " DATE_FORMAT(DATE(patstatus.start_date), '%d-%m-%Y') as 'Dernière date', pat.last_address as Adresse, pat.telephone as Téléphone,"
+					+ " pat.contact_name as Contact, DATE_FORMAT(DATE(pat.next_visit_date), '%d-%m-%Y') as 'Date de prochaine visite',"
 					     + " CASE WHEN(patstatus.dis_reason=5240) THEN 'Perdu de vue'"
 							 + "  WHEN (patstatus.dis_reason=159492) THEN 'Transfert'"
 								+ " WHEN (patstatus.dis_reason=159) THEN 'Décès'"
@@ -115,7 +115,8 @@ private final Log log = LogFactory.getLog(getClass());
 							+ ":transitionLostFollowUp,:transitionDeath, :transitionTranfered)");
 					/*sqlQuery.append(" AND patstatus.start_date = B.start_date");*/
 					sqlQuery.append(" AND patstatus.date_started_status = B.date_started_status");
-					sqlQuery.append(" AND patstatus.date_started_status <= :endDate"); 
+					sqlQuery.append(" AND patstatus.date_started_status <= :endDate");
+					sqlQuery.append(" AND pat.voided <> 1");
 					sqlQuery.append(" ORDER BY arv.name_fr");
 		
 		SQLQuery query = sessionFactory.getCurrentSession().createSQLQuery(sqlQuery.toString());
@@ -176,7 +177,7 @@ private final Log log = LogFactory.getLog(getClass());
 			row.addColumnValue(new DataSetColumn("prochaine_visite", "prochaine_visite", String.class), o[12]);
 			row.addColumnValue(new DataSetColumn("raison", "raison", String.class), o[13]);
 			dataSet.addRow(row);
-		}
+		}                                                                                                                                                                                                                                      
 		return dataSet;
 	}
 

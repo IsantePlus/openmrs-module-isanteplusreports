@@ -133,4 +133,18 @@ public class AlertPrecoceReportsConstants {
 	    public static final String ACTIVE_PATIENT_WITHOUT_FINGER_PRINT_UUID = "b015b45c-8af9-47dd-bbb0-5530083268c4";
 	    public static final String ACTIVE_PATIENT_WITHOUT_FINGER_PRINT_MESSAGE = "isanteplusreports.fingerprint.indicator.activePatientWithoutFingerPrint";
 	    public static final String ACTIVE_PATIENT_WITHOUT_FINGER_PRINT_NUM_SQL = "activePatientWithoutFingerPrint_num.sql";
+	    
+	    /*Constants for transitioned patient from Pediatric to Adult*/
+	    public static final String TRANSISIONED_PATIENT_FROM_PEDIATRIC_TO_ADULT_UUID = "49d1312e-eef5-49ae-8e62-15321227e25a";
+	    public static final String TRANSISIONED_PATIENT_FROM_PEDIATRIC_TO_ADULT_MESSAGE = "isanteplusreports.report.transitionedPatient";
+	    public static final String TRANSISIONED_PATIENT_NUM_SQL = "transitionedPatient_num.sql";
+	    public static final String TRANSISIONED_PATIENT_DEN_SQL = "transitionedPatient_den.sql";
+
+	    /* Constants vitalStatistics */
+	    public static final String VITAL_STATISTICS_UUID = "501e869e-f562-49da-8e3b-cb112f42837b";
+	    public static final String VITAL_STATISTICS_MESSAGE = "isanteplusreports.report.vitalStatistics";
+	    public static final String VITAL_STATISTICS_NUM_SQL = "vitalStatistics_num.sql";
+		public static final String VITAL_STATISTICS_DEN_SQL = "vitalStatistics_den.sql";
+		
+		
 }

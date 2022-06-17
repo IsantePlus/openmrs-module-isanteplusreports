@@ -17,7 +17,7 @@ WHERE
         FROM isanteplus.discontinuation_reason discon
         WHERE discon.reason IN (159,1667,159492)
     )
-	p.patient_id IN (
+	AND p.patient_id IN (
 		SELECT pv.patient_id FROM isanteplus.health_qual_patient_visit pv
 		WHERE pv.family_planning_method_used is true
 		AND pv.visit_date BETWEEN :startDate AND :endDate

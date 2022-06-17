@@ -19,13 +19,13 @@
 
 <style type="text/css">
 	.sorting {
-    	background: url(${ ui.resourceLink("isanteplusreports", "images/sort_both.png") }) no-repeat center right;
+    	background: url(${ ui.resourceLink("isanteplusreports", "images/sort_both.jpg") }) no-repeat center right;
 	}
 	.sorting_asc {
-    	background: url('${ ui.resourceLink("isanteplusreports", "images/sort_asc.png") }') no-repeat center right;
+    	background: url('${ ui.resourceLink("isanteplusreports", "images/sort_asc.jpg") }') no-repeat center right;
 	}
 	.sorting_desc {
-    	background: url('${ ui.resourceLink("isanteplusreports", "images/sort_desc.png") }') no-repeat center right;
+    	background: url('${ ui.resourceLink("isanteplusreports", "images/sort_desc.jpg") }') no-repeat center right;
 	}
 </style>
 

@@ -55,6 +55,8 @@ public class RegisterAllAlertPrecoceReports {
 		newActivePatientWithPsychoAssessment();
 		activePatientWithFingerPrint();
 		activePatientWithoutFingerPrint();
+		transitionedPatientFromPediatricToAdult();
+		vitalStatistics();
 	}
 	
 	
@@ -228,6 +230,20 @@ public class RegisterAllAlertPrecoceReports {
 				AlertPrecoceReportsConstants.ACTIVE_PATIENT_WITH_FINGER_PRINT_DEN_SQL,
 				AlertPrecoceReportsConstants.ACTIVE_PATIENT_WITHOUT_FINGER_PRINT_MESSAGE,
 				AlertPrecoceReportsConstants.ACTIVE_PATIENT_WITHOUT_FINGER_PRINT_UUID);
+	}
+	
+	private static void transitionedPatientFromPediatricToAdult() {
+		registerAlertPrecoceReportWithStartAndEndDateParamsNumDen(AlertPrecoceReportsConstants.TRANSISIONED_PATIENT_NUM_SQL,
+				AlertPrecoceReportsConstants.TRANSISIONED_PATIENT_DEN_SQL,
+				AlertPrecoceReportsConstants.TRANSISIONED_PATIENT_FROM_PEDIATRIC_TO_ADULT_MESSAGE,
+				AlertPrecoceReportsConstants.TRANSISIONED_PATIENT_FROM_PEDIATRIC_TO_ADULT_UUID);
+	}
+	
+	private static void vitalStatistics() {
+		registerAlertPrecoceReportWithStartAndEndDateParamsNumDen(AlertPrecoceReportsConstants.VITAL_STATISTICS_NUM_SQL,
+				AlertPrecoceReportsConstants.VITAL_STATISTICS_DEN_SQL,
+				AlertPrecoceReportsConstants.VITAL_STATISTICS_MESSAGE,
+				AlertPrecoceReportsConstants.VITAL_STATISTICS_UUID);
 	}
 	
 	private static void registerAlertPrecoceReportWithStartAndEndDateParams(String sql, String messageProperties,
