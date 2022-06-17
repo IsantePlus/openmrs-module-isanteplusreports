@@ -5,6 +5,7 @@ import org.apache.commons.logging.LogFactory;
 import org.openmrs.GlobalProperty;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.ModuleFactory;
+import org.openmrs.module.isanteplusreports.alertprecoce.util.RegisterAllAlertPrecoceReports;
 import org.openmrs.module.isanteplusreports.healthqual.util.RegisterAllHealthQualReports;
 import org.openmrs.module.isanteplusreports.pnlsReport.RegisterAllPnlsReports;
 import org.openmrs.module.isanteplusreports.util.RegisterAllOtherReports;
@@ -29,6 +30,7 @@ public class RegisterReports {
 				RegisterAllHealthQualReports.registerAll();
 				RegisterPatientsArvStatusReports.registerAllPatientsArvStatusReports();
 				RegisterAllPnlsReports.registerAll();
+				RegisterAllAlertPrecoceReports.registerAll();
 				Context.getAdministrationService().saveGlobalProperty(new GlobalProperty("reports.moduleVersion", version));
 			}
 		}

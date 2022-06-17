@@ -38,9 +38,11 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import javax.xml.bind.DatatypeConverter;
 import javax.xml.parsers.DocumentBuilder;
@@ -53,6 +55,7 @@ import org.apache.commons.logging.LogFactory;
 import org.openmrs.module.isanteplusreports.exception.HealthQualException;
 import org.openmrs.module.reporting.common.MessageUtil;
 import org.openmrs.module.reporting.dataset.DataSet;
+import org.openmrs.module.reporting.dataset.DataSetColumn;
 import org.openmrs.module.reporting.report.ReportData;
 import org.openmrs.ui.framework.UiUtils;
 import org.w3c.dom.Document;
@@ -1210,9 +1213,25 @@ public class PnlsReportBuilder extends UiUtils {
 				td(translateLabel("captv")).attr("colspan", "1").withClass("label"),
 				td(translateLabel("drug")).attr("colspan", "1").withClass("label"),
 				td(translateLabel("Total")).attr("colspan", "1").withClass("label"));
+		
 		int[] dataSet = createSummaryArray(getKeyPopnColumnNamesList(), data);
 		String reportName = data.getDefinition().getName();
 		buildIndicatorSummaryKeyPopn(dataSet, getKeyPopnColumnNamesArray(), reportName);
+		
+		/* Adding by Feshner */
+		int d1 = Integer.parseInt(data.iterator().next().getColumnValue("MSMN").toString());
+		int d2 = Integer.parseInt(data.iterator().next().getColumnValue("SPN").toString());
+		int d3 = Integer.parseInt(data.iterator().next().getColumnValue("TSGN").toString());
+		int d4 = Integer.parseInt(data.iterator().next().getColumnValue("CPN").toString());
+		int d5 = Integer.parseInt(data.iterator().next().getColumnValue("DRUGN").toString());
+		populateTable4WithSum(2, d1, d2, d3, d4, d5);
+		
+		int d6 = Integer.parseInt(data.iterator().next().getColumnValue("MSMR").toString());
+		int d7 = Integer.parseInt(data.iterator().next().getColumnValue("SPR").toString());
+		int d8 = Integer.parseInt(data.iterator().next().getColumnValue("TSGR").toString());
+		int d9 = Integer.parseInt(data.iterator().next().getColumnValue("CPR").toString());
+		int d10 = Integer.parseInt(data.iterator().next().getColumnValue("DRUGR").toString());
+		populateTable4WithSum(3, d6, d7, d8, d9, d10);
 	}
 
 	private void buildIndicatorKeyPopnSingleRow(DataSet data) {
@@ -1409,7 +1428,7 @@ public class PnlsReportBuilder extends UiUtils {
 
 		int colCount = 0;
 		for (int ROW = 2; ROW <= 3; ROW++) {
-			for (int col = 0; col <= 5; col++) {
+			for (int col = 0; col <= 4; col++) {
 				if (colCount < dataArray.length) {
 					String row = ConstructUrl(reportUrl, reportName, columnsArray[colCount]);
 					populateTable4(ROW, dataArray[colCount], row);
@@ -1532,7 +1551,17 @@ public class PnlsReportBuilder extends UiUtils {
 		getRows14()[ROW].with(td(Integer.toString(
 				data1 + data2 + data3 + data4 + data5 + data6 + data7 + data8 + data9 + data10 + data11 + data12)));
 	}
-
+	/*Adding by Feshner*/
+	private void populateTable4WithSum(Integer ROW, int data1, int data2, int data3, int data4, int data5) {
+		getRows4()[ROW].with(td(Integer.toString(data1 + data2 + data3 + data4 + data5)));
+		
+		//getRows4()[ROW].withValue(td(Integer.toString(data1 + data2 + data3 + data4 + data5)));
+		//getRows4()[ROW].withValue(Integer.toString(data1 + data2 + data3 + data4 + data5));
+		
+	}
+	
+	
+	/*End adding by Feshner*/
 	private void populateTable(Integer ROW, int data) {
 		getRows3()[ROW].with(td(Integer.toString(data)));
 	}

@@ -10,10 +10,13 @@ import org.openmrs.api.context.Context;
 import org.openmrs.module.reporting.definition.service.SerializedDefinitionService;
 import org.openmrs.module.reporting.report.definition.ReportDefinition;
 import org.openmrs.test.BaseModuleContextSensitiveTest;
-
+//import org.springframework.test.context.ContextConfiguration;
+//@ContextConfiguration(locations = "isanteplusreports:webModuleApplicationContext.xml")
+//@ContextConfiguration("/moduleApplicationContext.xml")
+/*@ContextConfiguration(locations = { "classpath:applicationContext-service.xml", "classpath*:openmrs-servlet.xml",
+"classpath*:moduleApplicationContext.xml" })*/
 public class RegisterAllHealthQualReportsTest extends BaseModuleContextSensitiveTest {
-	
-    @Override
+	@Override
     public Properties getRuntimeProperties() {
         Properties p = super.getRuntimeProperties();
         String url = "jdbc:h2:mem:isanteplus;MODE=MYSQL;DB_CLOSE_DELAY=30;LOCK_TIMEOUT=10000;"
@@ -26,10 +29,11 @@ public class RegisterAllHealthQualReportsTest extends BaseModuleContextSensitive
         return p;
     }
     
-	/**
+    /**
 	 * @see RegisterAllHealthQualReports#registerHealthEqualReportWithCurrentDateAndPeriodParamsNumDen(String,String,String,String)
 	 * @verifies save report definition and return valid instance
 	 */
+   
 	@Test
 	public void registerHealthEqualReportWithCurrentDateAndPeriodParamsNumDen_shouldSaveReportDefinitionAndReturnValidInstance()
 	        throws Exception {

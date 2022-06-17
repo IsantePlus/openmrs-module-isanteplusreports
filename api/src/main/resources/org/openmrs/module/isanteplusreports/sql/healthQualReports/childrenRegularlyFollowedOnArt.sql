@@ -1,15 +1,15 @@
 SELECT
-    COUNT( DISTINCT CASE WHEN (
+    COUNT(DISTINCT CASE WHEN (
         p.gender = 'F'
         AND (
-            pv.visit_date BETWEEN DATE_SUB(:currentDate, INTERVAL :period MONTH) AND :currentDate  AND pv.encounter_type IN (9,10) -- Paeds initial and followup encounter types
+            pv.visit_date BETWEEN DATE_SUB(:currentDate, INTERVAL :period MONTH) AND :currentDate AND pv.encounter_type IN (9,10) -- Paeds initial and followup encounter types
             OR (    -- Pediatric Rx
                 pp.visit_date BETWEEN DATE_SUB(:currentDate, INTERVAL :period MONTH) AND :currentDate
             )
         )
     ) THEN p.patient_id else null END
     ) AS 'femaleNumerator',
-    COUNT( DISTINCT CASE WHEN (
+    COUNT(DISTINCT CASE WHEN (
         p.gender = 'M'
         AND (
             pv.visit_date BETWEEN DATE_SUB(:currentDate, INTERVAL :period MONTH) AND :currentDate  AND pv.encounter_type IN (9,10) -- Paeds initial and followup encounter types

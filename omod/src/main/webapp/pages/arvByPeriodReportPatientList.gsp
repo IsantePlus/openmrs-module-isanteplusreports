@@ -91,6 +91,7 @@
 	    </tr>
 	    <div class="info-body">	
 	    	<% columnsValues.each { %>
+	    		<% i = i + 1 %>
 	    		<tr>
 			    		<td>
 			    			<a target="_blank" href="${ "/" + contextPath + dashboardUrlWithoutQueryParams }?patientId=${ui.format(it.getColumnValue("patient_id"))}">
@@ -126,5 +127,8 @@
 	    	<% } %>
 	    </div>
 	</table>
+	<div>
+     Total : ${ui.format(i)}
+	</div>
 	</div>
 </div>

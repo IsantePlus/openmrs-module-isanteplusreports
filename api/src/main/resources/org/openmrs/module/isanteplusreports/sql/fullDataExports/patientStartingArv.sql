@@ -1,7 +1,7 @@
 /*Liste des patients ayant démarré un régime ARV*/
 select distinct p.patient_id AS 'Patient Id', ifnull(DATE(pdis.dispensation_date),DATE(pdis.visit_date)) as 'Date initiation ARV',p.st_id as 'NO. de patient attribué par le site',
 p.national_id as 'Numéro d\'identité national',p.given_name as Nom,
-p.family_name as Prénom, p.gender AS Sexe, TIMESTAMPDIFF(YEAR,p.birthdate,now()) AS Âge
+p.family_name as Prénom, p.gender AS Sexe, TIMESTAMPDIFF(YEAR,p.birthdate,now()) AS Âge, DATE_FORMAT(p.birthdate, "%d-%m-%Y") as 'Date de naissance'
 FROM isanteplus.patient p,isanteplus.patient_dispensing pdis, 
 (SELECT pdp.patient_id,MIN(ifnull(DATE(pdp.dispensation_date),DATE(pdp.visit_date))) as visit_date FROM isanteplus.patient_dispensing pdp WHERE pdp.arv_drug = 1065 AND pdp.voided <> 1 GROUP BY 1) B
 WHERE p.patient_id=pdis.patient_id

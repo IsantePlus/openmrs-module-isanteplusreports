@@ -1,8 +1,9 @@
 <%
     ui.decorateWith("appui", "standardEmrPage")
-    ui.includeJavascript("coreapps", "fragments/datamanagement/codeDiagnosisDialog.js")
     ui.includeJavascript("uicommons", "datatables/jquery.dataTables.min.js")
-	ui.includeJavascript("isanteplusreports", "print.js")
+    ui.includeJavascript("isanteplusreports", "isanteplusReport.js")
+     ui.includeJavascript("isanteplusreports", "datatable.js")
+    ui.includeCss("uicommons", "datatables/dataTables_jui.css")
 %>
 
 <script type="text/javascript">
@@ -11,19 +12,7 @@
         { label: "${ ui.escapeJs(ui.message("reportingui.reportsapp.home.title")) }", link: emr.pageLink("reportingui", "reportsapp/home") },
         { label: "${ ui.message("isanteplusreports.patientStatus") }", link: "${ ui.thisUrl() }" }
     ];
-</script>
-
-<script type="text/javascript">
-	var modal = document.getElementById('divpopup');
-	modal.style.display = "none";
-	jq(document).ready(function() {
-		jq('#submit').on('click', function()
-		{
-			modal.style.display = "block";
-		});
-		
-	});
-			
+    var highlight = <%= param.request ? """ "${ ui.escapeJs(param.request[0])}" """ : "null" %>
 </script>
 
 <script type="text/javascript">
@@ -88,8 +77,19 @@
 
 </script>
 
+<style type="text/css">
+	.sorting {
+    	background: url(${ ui.resourceLink("isanteplusreports", "images/sort_both.jpg") }) no-repeat center right;
+	}
+	.sorting_asc {
+    	background: url('${ ui.resourceLink("isanteplusreports", "images/sort_asc.jpg") }') no-repeat center right;
+	}
+	.sorting_desc {
+    	background: url('${ ui.resourceLink("isanteplusreports", "images/sort_desc.jpg") }') no-repeat center right;
+	}
+</style>
 
-<div ng-app="patientStatusReport" ng-controller="patientStatusReportController">
+<div id="patientStatusReport">
 
 	 <div class="running-reports">
      
@@ -143,7 +143,7 @@
         <% if (startDate != null || endDate != null) { %>
     <div>
 	<input type='button' id='btn' value='${ ui.message("isanteplusreports.print") }' onclick='printDiv();'/>&nbsp;&nbsp;
-	<input type='button' id='btnExport' value='${ ui.message("isanteplusreports.export") }' onclick="tablesToExcel(['tab_excel'], ['Patients_status'], 'PatientsStatus.xls', 'Excel')"/>
+	<input type='button' id='btnExport' value='${ ui.message("isanteplusreports.export") }' onclick="tablesToExcel(['isanteplus-report'], ['Patients_status'], 'PatientsStatus.xls', 'Excel')"/>
 	</div><br/>
     <div id="DivIdToPrint">    
     <h3>
@@ -165,8 +165,9 @@
     		<% } %>
     	</tr>
 	</table>
-	
-    <table id="tab_excel" width="100%" border="1" cellspacing="0" cellpadding="2">
+	<%  ui.resourceLink("isanteplusreports", "images/sort_asc.png") %>
+   <!-- <table id="isanteplus-report" width="100%" border="1" cellspacing="0" cellpadding="2">-->
+      <table id="example">  
         <thead>
             <tr>
                 <th>${ ui.message("isanteplusreports.code_st") }</th>
@@ -219,7 +220,7 @@
 			    			${ui.format(it.getColumnValue("statut"))}
 			    		</td>
 			    		<td>
-			    			${ui.format(it.getColumnValue("derniere_date"))}
+			    			${ ui.format(it.getColumnValue("derniere_date"))}	
 			    		</td>
 			    		<td>
 			    			${ui.format(it.getColumnValue("adresse"))}
