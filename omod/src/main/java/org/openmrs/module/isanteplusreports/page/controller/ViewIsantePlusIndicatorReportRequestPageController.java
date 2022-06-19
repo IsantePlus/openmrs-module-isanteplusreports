@@ -52,6 +52,7 @@ public class ViewIsantePlusIndicatorReportRequestPageController {
 						dataset = reportData.getDataSets().get(key);
 					}
 					if (dataset != null) {
+						if(dataset.iterator().hasNext()){
                         Map<DataSetColumn, Object> columnValues = dataset.iterator().next().getColumnValues();
                         HashMap<DataSetColumn, Object> reportingValues = new HashMap<DataSetColumn, Object>();
                         columnValues.forEach((key, value) -> {
@@ -84,6 +85,16 @@ public class ViewIsantePlusIndicatorReportRequestPageController {
 						model.addAttribute("columnskeys", dataset.iterator().next().getColumnValuesByKey().keySet().toArray());
 						model.addAttribute("request", requestUuid);
 						model.addAttribute("i", 0);
+					  }
+						else {
+							model.addAttribute("reportName", null);
+							model.addAttribute("parameter", null);
+							model.addAttribute("dataset", null);
+							model.addAttribute("reportingValues", null);
+							model.addAttribute("columnskeys", null);
+							model.addAttribute("request", null);
+							model.addAttribute("i", 0);
+						}
 					}
 				}
 			}
