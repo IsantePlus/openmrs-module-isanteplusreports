@@ -61,6 +61,7 @@ public class ArvByPeriodReportPatientListPageController {
 		model.addAttribute("id", request.getParameter("id"));
 		model.addAttribute("dashboardUrlWithoutQueryParams", coreAppsProperties.getDashboardUrlWithoutQueryParams());
 		model.addAttribute("privilegePatientDashboard", IsantePlusReportsProperties.PRIVILEGE_PATIENT_DASHBOARD);
+		model.addAttribute("i", 0);
 		
 	}
 	
