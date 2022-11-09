@@ -15,5 +15,5 @@ WHERE pd.drug_id = 78280 AND pd.rx_or_prophy = 163768 GROUP BY 1) B
 	  AND pd.rx_or_prophy = 163768
 	  AND TIMESTAMPDIFF(MONTH,pd.visit_date,:endDate) >= 6
 	  AND TIMESTAMPDIFF(MONTH,pd.visit_date,:endDate) < 7 
-	  AND p.voided <> 1
-	  AND pd.voided <> 1;
+	  AND (p.voided IS NULL OR p.voided <> 1)
+	  AND (pd.voided IS NULL OR pd.voided <> 1);

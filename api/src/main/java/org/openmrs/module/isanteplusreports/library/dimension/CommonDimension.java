@@ -84,7 +84,7 @@ public class CommonDimension {
 		    CommonCohortLibrary ageCohortLibrary = new CommonCohortLibrary();
 		    dim.addParameter(new Parameter("effectiveDate", "Effective Date", Date.class));
 		    dim.setName("age");
-			dim.addCohortDefinition("<15", ReportUtils.map(ageCohortLibrary.agedAtMostCohort(15), "effectiveDate=${endDate}"));
+			dim.addCohortDefinition("<15", ReportUtils.map(ageCohortLibrary.agedAtMostCohort(14), "effectiveDate=${endDate}"));
 		    dim.addCohortDefinition(">15", ReportUtils.map(ageCohortLibrary.agedAtLeastCohort(15), "effectiveDate=${endDate}"));
 		    dim.addCohortDefinition("unknown", ReportUtils.map(ageCohortLibrary.unknownAgeCohort(), ""));
 		    return dim;

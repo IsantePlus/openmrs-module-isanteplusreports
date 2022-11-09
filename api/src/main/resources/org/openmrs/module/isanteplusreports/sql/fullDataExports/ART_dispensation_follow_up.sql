@@ -1,6 +1,8 @@
 /* Suivi dispensation ARV */
-SELECT distinct  p.patient_id AS 'Patient Id', p.st_id as 'Code ST', p.national_id as 'Code National', p.family_name as Nom, p.given_name as Prénom,
-DATE_FORMAT(DATE(p.birthdate), "%d-%m-%Y") as 'Date de naissance', TIMESTAMPDIFF(YEAR,p.birthdate,now()) AS Âge, p.gender AS Sexe,
+SELECT distinct  p.patient_id AS 'Patient Id', p.st_id as 'Code ST',
+p.national_id as 'Code National', p.family_name as Nom, p.given_name as Prénom,
+DATE_FORMAT(DATE(p.birthdate), "%d-%m-%Y") as 'Date de naissance', 
+TIMESTAMPDIFF(YEAR,p.birthdate,now()) AS Âge, p.gender AS Sexe,
 DATE_FORMAT(DATE(p.date_started_arv), "%d-%m-%Y") as 'Date Initiation ARV',
 DATE_FORMAT(DATE(p.last_visit_date), "%d-%m-%Y") as 'Date de Dernière Visite',
 DATE_FORMAT(DATE(pdis.visit_date), "%d-%m-%Y") as 'Date de Dernière visite Arv',
@@ -14,7 +16,10 @@ AND (pd.rx_or_prophy <> 163768 OR pd.rx_or_prophy is null) GROUP BY 1) B
 WHERE p.patient_id = pdis.patient_id
 AND pdis.patient_id = B.patient_id
 AND DATE(pdis.visit_date) = B.visit_date
+AND pdis.arv_drug = 1065
 AND p.vih_status = 1
 AND p.voided <> 1
-AND p.patient_id IN (SELECT ip.patient_id from openmrs.isanteplus_patient_arv ip WHERE ip.arv_regimen is not null)
+AND pdis.voided <> 1
+AND p.patient_id IN (SELECT ip.patient_id from openmrs.isanteplus_patient_arv ip 
+     WHERE ip.arv_regimen is not null)
 GROUP BY 1,2,3,4,5,6,7;

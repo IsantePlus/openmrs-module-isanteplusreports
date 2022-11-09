@@ -19,4 +19,5 @@ SELECT pat.patient_id
 	  AND pd.drug_id = 105281
       AND DATE(pd.next_dispensation_date) >= :startDate
 	  AND pd.voided <> 1
-	  AND pat.voided <> 1;
+	  AND pat.voided <> 1
+	  AND DATE(pat.date_started_arv) < :startDate;
