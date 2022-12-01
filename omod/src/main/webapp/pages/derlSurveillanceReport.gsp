@@ -168,6 +168,17 @@
     margin: 10pt auto;
     width: auto;
 }
+
+#result_container
+{
+	height: 500px;
+	overflow: scroll;
+	border: 1px solid black;
+	text-align: justify;
+	padding: 5px;
+	margin:0px;
+}
+
 </style>
 
 <div>
@@ -211,17 +222,20 @@
 	           </div>
 	           <button id="submit" type="submit">${ ui.message("reportingui.runButtonLabel") }</button>
         </form>
-
-        <% if (htmlResult != null) { %>
-            <h3> 
-                ${ ui.message("isanteplusreports.derl.surveillance.report") }
-            </h3>
-            <input type='button' id='buttonToPdf' value="Save as PDF" />
-            <input type='button' id='buttonToExcel' value="Save as Excel" />
-            <div id="divWithReportTables">
-                <%= htmlResult %>
-            </div>
-        <% } %>
+		
+	        <% if (htmlResult != null) { %>
+	            <h3> 
+	                ${ ui.message("isanteplusreports.derl.surveillance.report") }
+	            </h3>
+	            <input type='button' id='buttonToPdf' value="Save as PDF" />
+	            <input type='button' id='buttonToExcel' value="Save as Excel" />
+	            <div id="result_container">
+		            <div id="divWithReportTables">
+		                <%= htmlResult %>
+		            </div>
+		        </div>
+	        <% } %>
+	    
    </div>
    
 </div>
