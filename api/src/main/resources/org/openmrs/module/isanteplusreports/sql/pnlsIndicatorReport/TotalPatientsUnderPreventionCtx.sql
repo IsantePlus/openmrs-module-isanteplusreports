@@ -10,8 +10,8 @@ SELECT pat.patient_id
       AND ps.patient_id = D.patient_id
       AND DATE(ps.date_started_status) = D.date_status
       AND ps.id_status = 6
-      AND ps.date_started_status BETWEEN :startDate AND :endDate
+      AND DATE(ps.date_started_status) BETWEEN :startDate AND :endDate
 	   AND pd.drug_id = 105281 
       AND DATE(pd.next_dispensation_date) >= :startDate 
-	   AND pd.voided <> 1
-	   AND pat.voided <> 1;
+	   AND (pd.voided IS NULL OR pd.voided <> 1)
+	   AND (pat.voided IS NULL OR pat.voided <> 1);
