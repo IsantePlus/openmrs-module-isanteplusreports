@@ -178,5 +178,30 @@ public class IsantePlusReportsProperties{
 	public static final String ART_DISPENSATION_FOLLOW_UP_UUID = "ef282113-32bd-49d7-870f-0ef41443e8de";
 	
 	public static final String NEXT_VISIT_BY_PERIOD_UUID = "f3bef310-0e62-4b4f-88f1-8b7983ea51cb";
+	
+	public static final String ACTIVITY_AFTER_DISC_BY_PERIOD = "7414a044-ace9-4140-88f2-5b79d869b5c9";
 
+	public static final String PATIENTS_VACCINATED_FOR_COVID19 = "de5c0d89-4d01-4f1a-99dd-20b3dd778bc";
+
+	public static final String PATIENTS_DIAGNOSE_FOR_COVID19 = "c6381c6e-b9a4-49d3-84bd-210a0bc6b0dd";
+	
+	public static final String WEEKLYMONITORINGREPORT_UUID = "1c558cf7-d44c-49f2-bf9e-a43be418c990";
+	
+	public static final String PATIENTS_CONFIRM_COVID19 = "358f6c1f-6751-4ed0-8567-95a3ac227f39";
+	
+	public static final String PATIENTS_SUSPECTED_COVID19 = "27f98dae-6c6d-4424-87d2-bd41305253f4";
+	
+	public static final String PATIENTS_HIV_WITHOUT_POSITIVE_HIV_TEST = "3d931155-97ce-4c83-8652-37735bf48e45";
+	
+	public static final String ACTIVE_PATIENTS_VIRALLOAD_TWELVE_MONTHS = "bb53535b-4d85-4315-8506-8b242e60cfd9";
+	
+	public static final String ACTIVE_PATIENTS_SCREENED_FOR_TB_UUID = "8a6bf7f0-5a50-4221-83ad-61d29057864e";
+	
+	public static final String PATIENT_WITH_INCOMPLETE_PROPHYLAXIS_AGAINST_TB_UUID = "f48cf8ec-feb2-4473-89ec-4ab19dc48738";
+	
+	public static final String PATIENT_SCREENED_NEGATIVE_AGAINST_TB_WITH_NO_PROPHYLAXIS_UUID = "85d9ca70-81d7-4082-93c0-d9eeed450632";
+
+	public static final String DDPREPORTBYPERIOD_UUID = "3510620c-5eb8-4ca0-b680-eebc80502ebc";
+
+	public static final String PATIENT_WITH_FINGER_PRINT_UUID = "2a06491b-9f73-40a6-bed6-8c39fade8d7a";
 }

@@ -245,7 +245,7 @@ public class ColumnsLibrary {
 	
 	private static final String COLUMN_KEY_POPN_DRUG = "DRUG";
 	
-	private static final String COLUMN_KEY_POPN_TOTAL = "Total";
+	/*private static final String COLUMN_KEY_POPN_TOTAL = "Total";*/
 	
 	public static String[] genarateKeyPopnColumnArrayNames(String column){
 		 String[] KeyPonColumns = {
@@ -253,8 +253,8 @@ public class ColumnsLibrary {
 				COLUMN_KEY_POPN_SEX +column,
 				COLUMN_KEY_POPN_TRANSGENDER +column,
 				COLUMN_KEY_POPN_CAPTIVES +column,
-				COLUMN_KEY_POPN_DRUG +column,
-				COLUMN_KEY_POPN_TOTAL +column						
+				COLUMN_KEY_POPN_DRUG +column/*,
+				COLUMN_KEY_POPN_TOTAL +column*/						
 		};
 		return KeyPonColumns;		
 	}
